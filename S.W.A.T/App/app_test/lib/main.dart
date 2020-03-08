@@ -1,44 +1,99 @@
 import 'package:flutter/material.dart';
 
-// var green = 0xdd1fff8b;
-// var red = 0xddff3045;
+void main() => runApp(MyApp());
 
-class HomePage extends StatefulWidget
-{
+class MyApp extends StatelessWidget {
   @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  
-  // final roundCorner = 11.5;
-  // final heightCardBig = 200.0;
-  // final heightCardSmall = 45.0;
-  // final widthCard = 300.0;
-  int ctr = 0;
-
-  @override
-  Widget build(BuildContext context)
-  {
-    return Container(
-      child: Center( 
-        child: Text(
-          '$ctr'
-        ),
-      ),      
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Arena',
+      home: Scaffold(
+        body: Center(
+  child: Column(
+  children: [
+     SizedBox(
+      height: 150.0
+    ),
+    Container(
+      decoration: BoxDecoration(
+       color: Colors.greenAccent,
+       borderRadius: BorderRadius.all(Radius.circular(15.0)), 
+       boxShadow: [
+            BoxShadow(
+              color: Colors.black26,
+              offset: Offset(0.0, 5.0),
+              spreadRadius: 2.0,
+              blurRadius: 15.0,
+            )
+          ],
+      ),
+      
+      width: 330.0,
+      height: 200.0,
+     
+    ),
+    SizedBox(
+      height: 50.0
+    ),
+    Container(
+      decoration: BoxDecoration(
+       color: Colors.redAccent[400], 
+       borderRadius: BorderRadius.all(Radius.circular(15.0)),
+       boxShadow: [
+            BoxShadow(
+              color: Colors.black26,
+              offset: Offset(0.0, 5.0),
+              spreadRadius: 2.0,
+              blurRadius: 15.0,
+            )
+          ], 
+      ),
+      width: 330.0,
+      height: 60.0,
+     
+    ),
+    SizedBox(
+      height: 50.0
+    ),
+    Container(
+      decoration: BoxDecoration(
+       color: Colors.greenAccent, 
+       borderRadius: BorderRadius.all(Radius.circular(15.0)),
+       boxShadow: [
+            BoxShadow(
+              color: Colors.black26,
+              offset: Offset(0.0, 5.0),
+              spreadRadius: 2.0,
+              blurRadius: 15.0,
+            )
+          ], 
+      ),
+      width: 330.0,
+      height: 200.0,
+    ),
+     SizedBox(
+      height: 50.0
+    ),
+    Container(
+      decoration: BoxDecoration(
+       color: Colors.greenAccent, 
+       borderRadius: BorderRadius.all(Radius.circular(15.0)), 
+       boxShadow: [
+            BoxShadow(
+              color: Colors.black26,
+              offset: Offset(0.0, 5.0),
+              spreadRadius: 2.0,
+              blurRadius: 15.0,
+            )
+          ],
+      ),
+      width: 330.0,
+      height: 60.0,
+    ),
+  ],
+)
+      ),
+      ),
     );
   }
-}
-
-void main()
-{
-  
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: HomePage()
-      ),
-    ),
-  );
 }
