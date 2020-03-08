@@ -4,9 +4,9 @@ import 'package:flutter/services.dart';
 void main() { runApp(MyApp());
 SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
-      statusBarColor: Colors.white10, //top bar color
+      statusBarColor: Colors.white, //top bar color
       statusBarIconBrightness: Brightness.dark, //top bar icons
-      systemNavigationBarColor: Colors.white10, //bottom bar color
+      systemNavigationBarColor: Colors.white, //bottom bar color
       systemNavigationBarIconBrightness: Brightness.dark, //bottom bar icons
     )
   );
@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Arena',
       home: Scaffold(
+        backgroundColor: Colors.white,
         body: Center(
   child: Column(
   children: [
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
               color: Colors.black26,
               offset: Offset(0.0, 5.0),
               spreadRadius: 2.0,
-              blurRadius: 15.0,
+              blurRadius: 30.0,
             )
           ],
       ),
@@ -47,14 +48,14 @@ class MyApp extends StatelessWidget {
     ),
     Container(
       decoration: BoxDecoration(
-       color: Colors.redAccent[400], 
+       color: Colors.pinkAccent, 
        borderRadius: BorderRadius.all(Radius.circular(15.0)),
        boxShadow: [
             BoxShadow(
               color: Colors.black26,
               offset: Offset(0.0, 5.0),
               spreadRadius: 2.0,
-              blurRadius: 15.0,
+              blurRadius: 30.0,
             )
           ], 
       ),
@@ -63,7 +64,21 @@ class MyApp extends StatelessWidget {
      
     ),
     SizedBox(
-      height: 50.0
+      height: 40.0
+    ),
+    Text(
+  'Last Played',
+    textAlign: TextAlign.center,
+    overflow: TextOverflow.ellipsis,
+    style: TextStyle(
+      fontSize: 17.0,
+      fontWeight: FontWeight.w400,
+      color: Colors.grey[800],
+      fontFamily: 'Comfortaa'
+      )
+    ),
+     SizedBox(
+      height: 10.0
     ),
     Container(
       decoration: BoxDecoration(
@@ -74,7 +89,7 @@ class MyApp extends StatelessWidget {
               color: Colors.black26,
               offset: Offset(0.0, 5.0),
               spreadRadius: 2.0,
-              blurRadius: 15.0,
+              blurRadius: 30.0,
             )
           ], 
       ),
@@ -91,9 +106,9 @@ class MyApp extends StatelessWidget {
        boxShadow: [
             BoxShadow(
               color: Colors.black26,
-              offset: Offset(0.0, 5.0),
-              spreadRadius: 2.0,
-              blurRadius: 15.0,
+              offset: Offset(0.0, 0.0),
+              spreadRadius: 1.0,
+              blurRadius: 10.0,
             )
           ],
       ),
