@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'api_call_season.dart';
 
-void main() { runApp(MyApp());
-SystemChrome.setSystemUIOverlayStyle(
-    SystemUiOverlayStyle(
-      statusBarColor: Colors.white, //top bar color
-      statusBarIconBrightness: Brightness.dark, //top bar icons
-      systemNavigationBarColor: Colors.white, //bottom bar color
-      systemNavigationBarIconBrightness: Brightness.dark, //bottom bar icons
-    )
-  );
+var teamData;
+
+void main() async { 
+  print('Retrieving All Pre-data..');
+  teamData = await getTeamDataAtStart();
+  
+  for (int i=0;i<teamData.length;i++)
+    print(teamData[i].name);
+  
+  runApp(MyApp());
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.white, //top bar color
+        statusBarIconBrightness: Brightness.dark, //top bar icons
+        systemNavigationBarColor: Colors.white, //bottom bar color
+        systemNavigationBarIconBrightness: Brightness.dark, //bottom bar icons
+      )
+    );
 }
 
 final String liverpooliconurl = 'https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/180px-Liverpool_FC.svg.png';
@@ -34,19 +44,12 @@ final String watfordiconurl = 'https://upload.wikimedia.org/wikipedia/en/thumb/e
 final String westhamiconurl = 'https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/West_Ham_United_FC_logo.svg/185px-West_Ham_United_FC_logo.svg.png';
 final String wolvesiconurl = 'https://upload.wikimedia.org/wikipedia/en/thumb/f/fc/Wolverhampton_Wanderers.svg/200px-Wolverhampton_Wanderers.svg.png';
 
-
-
-
-
 int team;
 String teamlogo;
 
-
-
-
-
-
 class MyApp extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -90,24 +93,24 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text("Arsenal"),
+            child: Image.network(teamData[0].imageUrl),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 1;
-              teamlogo = arsenaliconurl;
+              teamlogo = teamData[0].imageUrl;
             },
           ),
           SizedBox(
             width: 90.0,
           ),
           RaisedButton(
-            child: Text("Aston"),
+            child: Text(teamData[1].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 2;
-              teamlogo = astoniconurl;
+              teamlogo = teamData[1].imageUrl;
             },
           ),
             ],
@@ -121,24 +124,24 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text("Bourne"),
+            child: Text(teamData[2].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 3;
-              teamlogo = bournemouthiconurl;
+              teamlogo = teamData[2].imageUrl;
             },
           ),
           SizedBox(
             width: 90.0,
           ),
           RaisedButton(
-            child: Text("Brighton"),
+            child: Text(teamData[3].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 4;
-              teamlogo = brightoniconurl;
+              teamlogo = teamData[3].imageUrl;
             },
           ),
             ],
@@ -152,24 +155,24 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text("Burnley"),
+            child: Text(teamData[4].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 5;
-              teamlogo = burnleyiconurl;
+              teamlogo = teamData[4].imageUrl;
             },
           ),
           SizedBox(
             width: 90.0,
           ),
           RaisedButton(
-            child: Text("Chelsea"),
+            child: Text(teamData[5].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 6;
-              teamlogo = chelseaiconurl;
+              teamlogo = teamData[5].imageUrl;
             },
           ),
             ],
@@ -183,24 +186,24 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text("Crystal"),
+            child: Text(teamData[6].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 7;
-              teamlogo = crystaliconurl;
+              teamlogo = teamData[6].imageUrl;
             },
           ),
           SizedBox(
             width: 90.0,
           ),
           RaisedButton(
-            child: Text("Everton"),
+            child: Text(teamData[7].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 8;
-              teamlogo = evertoniconurl;
+              teamlogo = teamData[7].imageUrl;
             },
           ),
             ],
@@ -214,24 +217,24 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text("Leicester"),
+            child: Text(teamData[8].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 9;
-              teamlogo = leicestericonurl;
+              teamlogo = teamData[8].imageUrl;
             },
           ),
           SizedBox(
             width: 90.0,
           ),
           RaisedButton(
-            child: Text("Liverpool"),
+            child: Text(teamData[9].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 10;
-              teamlogo = liverpooliconurl;
+              teamlogo = teamData[9].imageUrl;
             },
           ),
             ],
@@ -245,24 +248,24 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text("ManCity"),
+            child: Text(teamData[10].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 11;
-              teamlogo = mancityiconurl;
+              teamlogo = teamData[10].imageUrl;
             },
           ),
           SizedBox(
             width: 90.0,
           ),
           RaisedButton(
-            child: Text("ManU"),
+            child: Text(teamData[11].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 12;
-              teamlogo = manunitediconurl;
+              teamlogo = teamData[11].imageUrl;
             },
           ),
             ],
@@ -276,24 +279,24 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text("NewCast"),
+            child: Text(teamData[12].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 13;
-              teamlogo = newcastleiconurl;
+              teamlogo = teamData[12].imageUrl;
             },
           ),
           SizedBox(
             width: 90.0,
           ),
           RaisedButton(
-            child: Text("Norwich"),
+            child: Text(teamData[13].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 14;
-              teamlogo = norwichiconurl;
+              teamlogo = teamData[13].imageUrl;
             },
           ),
             ],
@@ -307,24 +310,24 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text("Sheffield"),
+            child: Text(teamData[14].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 15;
-              teamlogo = sheffieldiconurl;
+              teamlogo = teamData[14].imageUrl;
             },
           ),
           SizedBox(
             width: 90.0,
           ),
           RaisedButton(
-            child: Text("Southam"),
+            child: Text(teamData[15].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 16;
-              teamlogo = southamptoniconurl;
+              teamlogo = teamData[15].imageUrl;
             },
           ),
             ],
@@ -338,24 +341,24 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text("Spur"),
+            child: Text(teamData[16].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 17;
-              teamlogo = spuriconurl;
+              teamlogo = teamData[16].imageUrl;
             },
           ),
           SizedBox(
             width: 90.0,
           ),
           RaisedButton(
-            child: Text("Watford"),
+            child: Text(teamData[17].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 18;
-              teamlogo = watfordiconurl;
+              teamlogo = teamData[17].imageUrl;
             },
           ),
             ],
@@ -369,24 +372,24 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text("WestHam"),
+            child: Text(teamData[18].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 19;
-              teamlogo = westhamiconurl;
+              teamlogo = teamData[18].imageUrl;
             },
           ),
           SizedBox(
             width: 90.0,
           ),
           RaisedButton(
-            child: Text("Wolves"),
+            child: Text(teamData[19].name),
             color: Colors.greenAccent,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 20;
-              teamlogo = wolvesiconurl;
+              teamlogo = teamData[19].imageUrl;
             },
           ),
             ],
@@ -398,9 +401,6 @@ class TeamSelect extends StatelessWidget {
     );
   }
 }
-
-
-
 
 
 class Baseapp extends StatelessWidget {
