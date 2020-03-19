@@ -44,26 +44,6 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/team_logo/Arsenal.svg
-    - assets/team_logo/AstonVilla.svg
-    - assets/team_logo/Bournemouth.svg
-    - assets/team_logo/Brighton.svg
-    - assets/team_logo/Burnley.svg
-    - assets/team_logo/Chelsea.svg
-    - assets/team_logo/CrystalPalace.svg
-    - assets/team_logo/Everton.svg
-    - assets/team_logo/LeicesterCity.svg
-    - assets/team_logo/Liverpool.svg
-    - assets/team_logo/ManCity.svg
-    - assets/team_logo/ManUnited.svg
-    - assets/team_logo/NewcastleUnited.svg
-    - assets/team_logo/Norwich.svg
-    - assets/team_logo/Sheffield.svg
-    - assets/team_logo/Southampton.svg
-    - assets/team_logo/Spur.svg
-    - assets/team_logo/Watford.svg
-    - assets/team_logo/WestHam.svg
-    - assets/team_logo/Wolves.svg
    
 
   # An image asset can refer to one or more resolution-specific "variants", see
