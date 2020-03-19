@@ -52,19 +52,19 @@ class TeamSelect extends StatelessWidget {
         child: Column(
         children: [
           SizedBox(
-            height: 50.0,
+            height: 34.0,
           ),
           Text(
-            "Select A Team :",
+            "Select Your Team :",
             style: TextStyle(
-              fontSize: 25.0,
+              fontSize: 20.0,
               fontFamily: 'Comfortaa',
               fontWeight: FontWeight.w400,
               color: Colors.grey[800],
             ),
           ),
           SizedBox(
-            height: 20.0,
+            height: 19.0,
           ),
           Row(
             children: [
@@ -72,8 +72,13 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Image.network(teamData[0].imageUrl),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[0].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
+            highlightElevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 1;
@@ -84,8 +89,12 @@ class TeamSelect extends StatelessWidget {
             width: 90.0,
           ),
           RaisedButton(
-            child: Text(teamData[1].name),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[1].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 2;
@@ -95,7 +104,7 @@ class TeamSelect extends StatelessWidget {
             ],
           ),
          SizedBox(
-            height: 30.0,
+            height: 27.0,
           ),
           Row(
             children: [
@@ -103,8 +112,12 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text(teamData[2].name),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[2].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 3;
@@ -115,8 +128,12 @@ class TeamSelect extends StatelessWidget {
             width: 90.0,
           ),
           RaisedButton(
-            child: Text(teamData[3].name),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[3].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 4;
@@ -126,7 +143,7 @@ class TeamSelect extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 30.0,
+            height: 27.0,
           ),
           Row(
             children: [
@@ -134,8 +151,12 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text(teamData[4].name),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[4].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 5;
@@ -146,8 +167,12 @@ class TeamSelect extends StatelessWidget {
             width: 90.0,
           ),
           RaisedButton(
-            child: Text(teamData[5].name),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[5].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 6;
@@ -157,7 +182,7 @@ class TeamSelect extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 30.0,
+            height: 27.0,
           ),
           Row(
             children: [
@@ -165,8 +190,12 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text(teamData[6].name),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[6].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 7;
@@ -177,8 +206,12 @@ class TeamSelect extends StatelessWidget {
             width: 90.0,
           ),
           RaisedButton(
-            child: Text(teamData[7].name),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[7].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 8;
@@ -188,7 +221,7 @@ class TeamSelect extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 30.0,
+            height: 27.0,
           ),
           Row(
             children: [
@@ -196,8 +229,12 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text(teamData[8].name),
-            color: Colors.greenAccent,
+            child:Image.network(
+              teamData[8].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 9;
@@ -208,8 +245,12 @@ class TeamSelect extends StatelessWidget {
             width: 90.0,
           ),
           RaisedButton(
-            child: Text(teamData[9].name),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[9].imageUrl,
+              height: 50,
+            ),
+           color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 10;
@@ -219,7 +260,7 @@ class TeamSelect extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 30.0,
+            height: 27.0,
           ),
           Row(
             children: [
@@ -227,8 +268,12 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text(teamData[10].name),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[10].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 11;
@@ -239,8 +284,12 @@ class TeamSelect extends StatelessWidget {
             width: 90.0,
           ),
           RaisedButton(
-            child: Text(teamData[11].name),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[11].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 12;
@@ -250,7 +299,7 @@ class TeamSelect extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 30.0,
+            height: 27.0,
           ),
           Row(
             children: [
@@ -258,8 +307,12 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text(teamData[12].name),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[12].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 13;
@@ -270,8 +323,12 @@ class TeamSelect extends StatelessWidget {
             width: 90.0,
           ),
           RaisedButton(
-            child: Text(teamData[13].name),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[13].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 14;
@@ -281,7 +338,7 @@ class TeamSelect extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 30.0,
+            height: 27.0,
           ),
           Row(
             children: [
@@ -289,8 +346,12 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text(teamData[14].name),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[14].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 15;
@@ -301,8 +362,12 @@ class TeamSelect extends StatelessWidget {
             width: 90.0,
           ),
           RaisedButton(
-            child: Text(teamData[15].name),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[15].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 16;
@@ -312,7 +377,7 @@ class TeamSelect extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 30.0,
+            height: 27.0,
           ),
           Row(
             children: [
@@ -320,8 +385,12 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text(teamData[16].name),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[16].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 17;
@@ -332,8 +401,12 @@ class TeamSelect extends StatelessWidget {
             width: 90.0,
           ),
           RaisedButton(
-            child: Text(teamData[17].name),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[17].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 18;
@@ -343,7 +416,7 @@ class TeamSelect extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 30.0,
+            height: 27.0,
           ),
           Row(
             children: [
@@ -351,8 +424,12 @@ class TeamSelect extends StatelessWidget {
             width: 70.0,
           ),
           RaisedButton(
-            child: Text(teamData[18].name),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[18].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 19;
@@ -363,8 +440,12 @@ class TeamSelect extends StatelessWidget {
             width: 90.0,
           ),
           RaisedButton(
-            child: Text(teamData[19].name),
-            color: Colors.greenAccent,
+            child: Image.network(
+              teamData[19].imageUrl,
+              height: 50,
+            ),
+            color: Colors.transparent,
+            elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 20;
@@ -543,7 +624,7 @@ Text(
      
     ),
     SizedBox(
-      height: 50.0
+      height: 45.0
     ),
     Row(
      children: [
@@ -808,7 +889,7 @@ Text(
       ),
     ),
      SizedBox(
-      height: 50.0
+      height: 49.0
     ),
     Container(
       decoration: BoxDecoration(
@@ -817,7 +898,7 @@ Text(
         boxShadow: [
             BoxShadow(
               color: Colors.black87,
-              offset: Offset(0.0, 7.0),
+              offset: Offset(0.0, 0.0),
               spreadRadius: -7.0,
               blurRadius: 10.0,
             )
