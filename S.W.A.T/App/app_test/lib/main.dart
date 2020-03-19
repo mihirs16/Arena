@@ -48,21 +48,24 @@ class TeamSelect extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text(
+          "Select Your Favourite Team :",
+          textAlign: TextAlign.center,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(
+          color: Colors.grey[800]
+          ),
+        ),
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: false,
+      ),
       body: Center(
-        child: Column(
+        child: ListView(
+          padding: const EdgeInsets.only(bottom: 10, top: 5),
         children: [
-          SizedBox(
-            height: 34.0,
-          ),
-          Text(
-            "Select Your Team :",
-            style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Comfortaa',
-              fontWeight: FontWeight.w400,
-              color: Colors.grey[800],
-            ),
-          ),
+          
+          
           SizedBox(
             height: 19.0,
           ),
@@ -81,7 +84,7 @@ class TeamSelect extends StatelessWidget {
             highlightElevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 1;
+              team = 0;
               teamlogo = teamData[0].imageUrl;
             },
           ),
@@ -97,7 +100,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 2;
+              team = 1;
               teamlogo = teamData[1].imageUrl;
             },
           ),
@@ -120,7 +123,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 3;
+              team = 2;
               teamlogo = teamData[2].imageUrl;
             },
           ),
@@ -136,7 +139,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 4;
+              team = 3;
               teamlogo = teamData[3].imageUrl;
             },
           ),
@@ -159,7 +162,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 5;
+              team = 4;
               teamlogo = teamData[4].imageUrl;
             },
           ),
@@ -175,7 +178,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 6;
+              team = 5;
               teamlogo = teamData[5].imageUrl;
             },
           ),
@@ -198,7 +201,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 7;
+              team = 6;
               teamlogo = teamData[6].imageUrl;
             },
           ),
@@ -214,7 +217,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 8;
+              team = 7;
               teamlogo = teamData[7].imageUrl;
             },
           ),
@@ -237,7 +240,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 9;
+              team = 8;
               teamlogo = teamData[8].imageUrl;
             },
           ),
@@ -253,7 +256,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 10;
+              team = 9;
               teamlogo = teamData[9].imageUrl;
             },
           ),
@@ -276,7 +279,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 11;
+              team = 10;
               teamlogo = teamData[10].imageUrl;
             },
           ),
@@ -292,7 +295,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 12;
+              team = 11;
               teamlogo = teamData[11].imageUrl;
             },
           ),
@@ -315,7 +318,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 13;
+              team = 12;
               teamlogo = teamData[12].imageUrl;
             },
           ),
@@ -331,7 +334,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 14;
+              team = 13;
               teamlogo = teamData[13].imageUrl;
             },
           ),
@@ -354,7 +357,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 15;
+              team = 14;
               teamlogo = teamData[14].imageUrl;
             },
           ),
@@ -370,7 +373,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 16;
+              team = 15;
               teamlogo = teamData[15].imageUrl;
             },
           ),
@@ -393,7 +396,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 17;
+              team = 16;
               teamlogo = teamData[16].imageUrl;
             },
           ),
@@ -409,7 +412,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 18;
+              team = 17;
               teamlogo = teamData[17].imageUrl;
             },
           ),
@@ -432,7 +435,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 19;
+              team = 18;
               teamlogo = teamData[18].imageUrl;
             },
           ),
@@ -448,7 +451,7 @@ class TeamSelect extends StatelessWidget {
             elevation: 0,
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
-              team = 20;
+              team = 19;
               teamlogo = teamData[19].imageUrl;
             },
           ),
@@ -469,7 +472,8 @@ class Baseapp extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.white,
         body: Center(
-  child: Column(
+  child: ListView(
+    padding: EdgeInsets.only(bottom: 15, top: 0, left: 30, right: 30),
   children: [
      SizedBox(
             height: 40.0
@@ -515,7 +519,7 @@ SizedBox(
     textAlign: TextAlign.center,
     overflow: TextOverflow.ellipsis,
     style: TextStyle(
-      fontSize: 22.0,
+      fontSize: 16.0,
       fontFamily: 'Comfortaa',
       fontWeight: FontWeight.w600,
       color: Colors.grey[800],
@@ -529,7 +533,7 @@ SizedBox(
     textAlign: TextAlign.center,
     overflow: TextOverflow.ellipsis,
     style: TextStyle(
-      fontSize: 15.0,
+      fontSize: 10.0,
       fontWeight: FontWeight.w400,
       color: Colors.grey[800],
       fontFamily: 'Comfortaa'
@@ -629,7 +633,7 @@ Text(
     Row(
      children: [
        SizedBox(
-      width: 60.0
+      width: 25.0
     ),
     Text(
   'Team',
@@ -637,7 +641,7 @@ Text(
     overflow: TextOverflow.ellipsis,
     style: TextStyle(
       fontSize: 12.0,
-      fontWeight: FontWeight.w800,
+      fontWeight: FontWeight.w400,
       color: Colors.grey[800],
       fontFamily: 'Comfortaa'
       )
@@ -651,7 +655,7 @@ Text(
     overflow: TextOverflow.ellipsis,
     style: TextStyle(
       fontSize: 12.0,
-      fontWeight: FontWeight.w800,
+      fontWeight: FontWeight.w400,
       color: Colors.grey[800],
       fontFamily: 'Comfortaa'
       )
@@ -665,7 +669,7 @@ Text(
     overflow: TextOverflow.ellipsis,
     style: TextStyle(
       fontSize: 12.0,
-      fontWeight: FontWeight.w800,
+      fontWeight: FontWeight.w400,
       color: Colors.grey[800],
       fontFamily: 'Comfortaa'
       )
@@ -693,7 +697,7 @@ Text(
       child: Row(  
         children: [
           SizedBox(
-      width: 20.0
+      width: 25.0
     ),
          Text(
   'CHE',
@@ -701,7 +705,7 @@ Text(
     overflow: TextOverflow.ellipsis,
     style: TextStyle(
       fontSize: 18.0,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w800,
       color: Colors.black,
       fontFamily: 'Comfortaa'
       )
@@ -715,7 +719,7 @@ Text(
     overflow: TextOverflow.ellipsis,
     style: TextStyle(
       fontSize: 18.0,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w800,
       color: Colors.black,
       fontFamily: 'Comfortaa'
       )
@@ -729,7 +733,7 @@ Text(
     overflow: TextOverflow.ellipsis,
     style: TextStyle(
       fontSize: 18.0,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w800,
       color: Colors.black,
       fontFamily: 'Comfortaa'
       )
@@ -781,7 +785,7 @@ Text(
     textAlign: TextAlign.center,
     overflow: TextOverflow.ellipsis,
     style: TextStyle(
-      fontSize: 22.0,
+      fontSize: 16.0,
       fontFamily: 'Comfortaa',
       fontWeight: FontWeight.w600,
       color: Colors.grey[800],
@@ -795,7 +799,7 @@ Text(
     textAlign: TextAlign.center,
     overflow: TextOverflow.ellipsis,
     style: TextStyle(
-      fontSize: 15.0,
+      fontSize: 10.0,
       fontWeight: FontWeight.w400,
       color: Colors.grey[800],
       fontFamily: 'Comfortaa'
@@ -807,7 +811,7 @@ Text(
     Row(
       children: [
         SizedBox(
-            width: 100.0
+            width: 90.0
           ),
       Text(
   '4',
@@ -891,58 +895,7 @@ Text(
      SizedBox(
       height: 49.0
     ),
-    Container(
-      decoration: BoxDecoration(
-       color: Colors.greenAccent, 
-       borderRadius: BorderRadius.all(Radius.circular(15.0)), 
-        boxShadow: [
-            BoxShadow(
-              color: Colors.black87,
-              offset: Offset(0.0, 0.0),
-              spreadRadius: -7.0,
-              blurRadius: 10.0,
-            )
-          ],
-      ),
-      width: 330.0,
-      height: 60.0,
-      child: Row(  
-        children: [
-          SizedBox(
-      width: 20.0
-    ),
-         Text(
-  'CHE',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 18.0,
-      fontWeight: FontWeight.w600,
-      color: Colors.black,
-      fontFamily: 'Comfortaa'
-      )
-    ),
-    SizedBox(
-      width: 85.0
-    ),
     
-    SizedBox(
-      width: 80.0
-    ),
-    Text(
-  '05',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 18.0,
-      fontWeight: FontWeight.w600,
-      color: Colors.black,
-      fontFamily: 'Comfortaa'
-      )
-    ),
-        ],
-      ),
-    ),
   ],
 )
       ),
