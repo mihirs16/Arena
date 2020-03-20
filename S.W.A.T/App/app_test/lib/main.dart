@@ -20,7 +20,8 @@ void main() async {
 }
 
 int team;
-String teamlogo;
+String teamlogo; 
+int total = (teamStatsOfTeams[team].wins + teamStatsOfTeams[team].losses + teamStatsOfTeams[team].draws) ;
 
 class MyApp extends StatelessWidget {
 
@@ -474,18 +475,34 @@ class Baseapp extends StatelessWidget {
      SizedBox(
             height: 40.0
           ),
-     FloatingActionButton(
+     RaisedButton(
       onPressed: () {
         Navigator.pushNamed(context, '/TeamSelect');
+
+        
       },
       child: Image.network(
         teamlogo,
-        height: 70,
+        height: 80,
       ),
-      backgroundColor: Colors.transparent,
+      color: Colors.transparent,
       elevation: 0,
       
-    ), 
+    ),
+    SizedBox(
+      height: 15
+    ),
+    Text(
+   teamsOfTheSeason[team].name,
+   textAlign: TextAlign.center,
+   style: TextStyle(
+     fontFamily: 'Comfortaa',
+     fontSize: 15,
+     fontWeight: FontWeight.w600,
+     color: Colors.grey[800],
+   ),
+    ),
+   
 SizedBox(
             height: 20.0
           ),
@@ -504,7 +521,7 @@ SizedBox(
       ),
       
       width: 330.0,
-      height: 200.0,
+      height: 540.0,
       child: Column(
         children: [
           SizedBox(
@@ -515,7 +532,7 @@ SizedBox(
     textAlign: TextAlign.center,
     overflow: TextOverflow.ellipsis,
     style: TextStyle(
-      fontSize: 16.0,
+      fontSize: 22.0,
       fontFamily: 'Comfortaa',
       fontWeight: FontWeight.w600,
       color: Colors.grey[800],
@@ -529,7 +546,7 @@ SizedBox(
     textAlign: TextAlign.center,
     overflow: TextOverflow.ellipsis,
     style: TextStyle(
-      fontSize: 10.0,
+      fontSize: 14.0,
       fontWeight: FontWeight.w400,
       color: Colors.grey[800],
       fontFamily: 'Comfortaa'
@@ -538,86 +555,337 @@ SizedBox(
     SizedBox(
             height: 25.0
           ),
-    Row(
-      children: [
-        SizedBox(
-            width: 100.0
-          ),
-      Text(
-  '5',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 60.0,
-      fontWeight: FontWeight.w200,
-      color: Colors.grey[800],
-      fontFamily: 'Comfortaa'
-      )
-    ),
-     SizedBox(
-            width: 25.0
-          ),
-          Text(
-  '-',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 60.0,
-      fontWeight: FontWeight.w200,
-      color: Colors.grey[800],
-      fontFamily: 'Comfortaa'
-      )
-    ),
-    SizedBox(
-            width: 25.0
+    Container(
+      decoration: BoxDecoration(
+       color: Colors.tealAccent[700],
+       borderRadius: BorderRadius.all(Radius.circular(8.0)), 
+        boxShadow: [
+            BoxShadow(
+              color: Colors.black87,
+              offset: Offset(0.0, 2.0),
+              spreadRadius: -7.0,
+              blurRadius: 10.0,
+            )
+          ],
+      ),
+      
+      width: 315.0,
+      height: 60.0,
+      child: Row(
+        children: <Widget>[
+          SizedBox(
+            width: 10,
           ),
           Text(
-  '4',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 60.0,
-      fontWeight: FontWeight.w200,
-      color: Colors.grey[800],
-      fontFamily: 'Comfortaa'
-      )
+            "Matches",
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              color: Colors.grey[800],
+              fontSize: 30,
+              fontFamily: 'Comfortaa',
+              fontWeight: FontWeight.w300,
+            ),
+          ),
+          SizedBox(
+            width: 145,
+          ),
+              Text(
+            (teamStatsOfTeams[team].wins + teamStatsOfTeams[team].losses + teamStatsOfTeams[team].draws).toString(),
+            textAlign: TextAlign.right,
+            style: TextStyle(
+              color: Colors.grey[800],
+              fontSize: 30,
+              fontFamily: 'Comfortaa',
+              fontWeight: FontWeight.w300,
+            ),
+          ),
+           SizedBox(
+            width: 10,
+          ),
+        ],
+      ),
+    
+     
     ),
-      ],
+   SizedBox(
+            height: 15.0
+          ),
+    Container(
+      decoration: BoxDecoration(
+       color: Colors.tealAccent[700],
+       borderRadius: BorderRadius.all(Radius.circular(8.0)), 
+        boxShadow: [
+            BoxShadow(
+              color: Colors.black87,
+              offset: Offset(0.0, 2.0),
+              spreadRadius: -7.0,
+              blurRadius: 10.0,
+            )
+          ],
+      ),
+      
+      width: 315.0,
+      height: 60.0,
+      child: Row(
+        children: <Widget>[
+          SizedBox(
+            width: 10,
+          ),
+          Text(
+            "Won",
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              color: Colors.grey[800],
+              fontSize: 30,
+              fontFamily: 'Comfortaa',
+              fontWeight: FontWeight.w300,
+            ),
+          ),
+          SizedBox(
+            width: 200,
+          ),
+              Text(
+            teamStatsOfTeams[team].wins.toString(),
+            textAlign: TextAlign.right,
+            style: TextStyle(
+              color: Colors.grey[800],
+              fontSize: 30,
+              fontFamily: 'Comfortaa',
+              fontWeight: FontWeight.w300,
+            ),
+          ),
+           SizedBox(
+            width: 10,
+          ),
+        ],
+      ),
+    
+     
     ),
     SizedBox(
-            height: 30.0
+            height: 15.0
           ),
-    Row(
-      children: [
-        SizedBox(
-            width: 15.0
+    Container(
+      decoration: BoxDecoration(
+       color: Colors.tealAccent[700],
+       borderRadius: BorderRadius.all(Radius.circular(8.0)), 
+        boxShadow: [
+            BoxShadow(
+              color: Colors.black87,
+              offset: Offset(0.0, 2.0),
+              spreadRadius: -7.0,
+              blurRadius: 10.0,
+            )
+          ],
+      ),
+      
+      width: 315.0,
+      height: 60.0,
+      child: Row(
+        children: <Widget>[
+          SizedBox(
+            width: 10,
           ),
-Text(
-  '10/02/2020',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 10.0,
-      fontWeight: FontWeight.w400,
-      color: Colors.grey[800],
-      fontFamily: 'Comfortaa'
-      )
+          Text(
+            "Lost",
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              color: Colors.grey[800],
+              fontSize: 30,
+              fontFamily: 'Comfortaa',
+              fontWeight: FontWeight.w300,
+            ),
+          ),
+          SizedBox(
+           width: 202,
+    
+          ),
+              Text(
+            teamStatsOfTeams[team].losses.toString(),
+            textAlign: TextAlign.right,
+            style: TextStyle(
+              color: Colors.grey[800],
+              fontSize: 30,
+              fontFamily: 'Comfortaa',
+              fontWeight: FontWeight.w300,
+            ),
+          ),
+           SizedBox(
+            width: 10,
+          ),
+        ],
+      ),
+    
+     
     ),
-     SizedBox(
-            width: 230.0
+    SizedBox(
+            height: 15.0
           ),
-        Text(
-  '53',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 10.0,
-      fontWeight: FontWeight.w400,
-      color: Colors.grey[800],
-      fontFamily: 'Comfortaa'
-      )
-    ),  
-      ],
+    Container(
+      decoration: BoxDecoration(
+       color: Colors.tealAccent[700],
+       borderRadius: BorderRadius.all(Radius.circular(8.0)), 
+        boxShadow: [
+            BoxShadow(
+              color: Colors.black87,
+              offset: Offset(0.0, 2.0),
+              spreadRadius: -7.0,
+              blurRadius: 10.0,
+            )
+          ],
+      ),
+      
+      width: 315.0,
+      height: 60.0,
+      child: Row(
+        children: <Widget>[
+          SizedBox(
+            width: 10,
+          ),
+          Text(
+            "Draws",
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              color: Colors.grey[800],
+              fontSize: 30,
+              fontFamily: 'Comfortaa',
+              fontWeight: FontWeight.w300,
+            ),
+          ),
+          SizedBox(
+           width: 177,
+    
+          ),
+              Text(
+            teamStatsOfTeams[team].draws.toString(),
+            textAlign: TextAlign.right,
+            style: TextStyle(
+              color: Colors.grey[800],
+              fontSize: 30,
+              fontFamily: 'Comfortaa',
+              fontWeight: FontWeight.w300,
+            ),
+          ),
+           SizedBox(
+            width: 10,
+          ),
+        ],
+      ),
+    
+     
+    ),
+    SizedBox(
+            height: 15.0
+          ),
+    Container(
+      decoration: BoxDecoration(
+       color: Colors.tealAccent[700],
+       borderRadius: BorderRadius.all(Radius.circular(8.0)), 
+        boxShadow: [
+            BoxShadow(
+              color: Colors.black87,
+              offset: Offset(0.0, 2.0),
+              spreadRadius: -7.0,
+              blurRadius: 10.0,
+            )
+          ],
+      ),
+      
+      width: 315.0,
+      height: 60.0,
+      child: Row(
+        children: <Widget>[
+          SizedBox(
+            width: 10,
+          ),
+          Text(
+            "Scored",
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              color: Colors.grey[800],
+              fontSize: 30,
+              fontFamily: 'Comfortaa',
+              fontWeight: FontWeight.w300,
+            ),
+          ),
+          SizedBox(
+           width: 168,
+    
+          ),
+              Text(
+            teamStatsOfTeams[team].scoredRatio.toString(),
+            textAlign: TextAlign.right,
+            style: TextStyle(
+              color: Colors.grey[800],
+              fontSize: 30,
+              fontFamily: 'Comfortaa',
+              fontWeight: FontWeight.w300,
+            ),
+          ),
+           SizedBox(
+            width: 10,
+          ),
+        ],
+      ),
+    
+     
+    ),
+    SizedBox(
+            height: 15.0
+          ),
+          
+    Container(
+      decoration: BoxDecoration(
+       color: Colors.tealAccent[700],
+       borderRadius: BorderRadius.all(Radius.circular(8.0)), 
+        boxShadow: [
+            BoxShadow(
+              color: Colors.black87,
+              offset: Offset(0.0, 2.0),
+              spreadRadius: -7.0,
+              blurRadius: 10.0,
+            )
+          ],
+      ),
+      
+      width: 315.0,
+      height: 60.0,
+      child: Row(
+        children: <Widget>[
+          SizedBox(
+            width: 10,
+          ),
+          Text(
+            "Conceded",
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              color: Colors.grey[800],
+              fontSize: 30,
+              fontFamily: 'Comfortaa',
+              fontWeight: FontWeight.w300,
+            ),
+          ),
+          SizedBox(
+           width: 128,
+    
+          ),
+              Text(
+             teamStatsOfTeams[team].concedRatio.toString(),
+            textAlign: TextAlign.right,
+            style: TextStyle(
+              color: Colors.grey[800],
+              fontSize: 30,
+              fontFamily: 'Comfortaa',
+              fontWeight: FontWeight.w300,
+            ),
+          ),
+           SizedBox(
+            width: 10,
+          ),
+        ],
+      ),
+    
+     
     ),
         ],
       ),
@@ -626,271 +894,87 @@ Text(
     SizedBox(
       height: 45.0
     ),
-    Row(
-     children: [
-       SizedBox(
-      width: 25.0
-    ),
-    Text(
-  'Team',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 12.0,
-      fontWeight: FontWeight.w400,
-      color: Colors.grey[800],
-      fontFamily: 'Comfortaa'
-      )
-    ),
-     SizedBox(
-      width: 98.0
-    ),
-     Text(
-  'Points',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 12.0,
-      fontWeight: FontWeight.w400,
-      color: Colors.grey[800],
-      fontFamily: 'Comfortaa'
-      )
-    ),
+   
     SizedBox(
-      width: 95.0
-    ),
-     Text(
-  'Rank',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 12.0,
-      fontWeight: FontWeight.w400,
-      color: Colors.grey[800],
-      fontFamily: 'Comfortaa'
-      )
-    ),
-     ],
-    ),
-    SizedBox(
-      height: 5.0
-    ),
-    Container(
-      decoration: BoxDecoration(
-       color: Colors.pinkAccent, 
-       borderRadius: BorderRadius.all(Radius.circular(15.0)),
-       boxShadow: [
-            BoxShadow(
-              color: Colors.black87,
-              offset: Offset(0.0, 7.0),
-              spreadRadius: -7.0,
-              blurRadius: 10.0,
-            )
-          ], 
-      ),
-      width: 330.0,
-      height: 60.0,
-      child: Row(  
-        children: [
-          SizedBox(
-      width: 25.0
-    ),
-         Text(
-  'CHE',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 18.0,
-      fontWeight: FontWeight.w800,
-      color: Colors.black,
-      fontFamily: 'Comfortaa'
-      )
-    ),
-    SizedBox(
-      width: 100.0
-    ),
-    Text(
-  '39',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 18.0,
-      fontWeight: FontWeight.w800,
-      color: Colors.black,
-      fontFamily: 'Comfortaa'
-      )
-    ), 
-    SizedBox(
-      width: 105.0
-    ),
-    Text(
-  '05',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 18.0,
-      fontWeight: FontWeight.w800,
-      color: Colors.black,
-      fontFamily: 'Comfortaa'
-      )
-    ),
-        ],
-      ),
-     
-    ),
-    
-    SizedBox(
-      height: 40.0
-    ),
-    Text(
-  'Last Played',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 17.0,
-      fontWeight: FontWeight.w400,
-      color: Colors.grey[800],
-      fontFamily: 'Comfortaa'
-      )
-    ),
-     SizedBox(
       height: 10.0
     ),
     Container(
       decoration: BoxDecoration(
-       color: Colors.greenAccent, 
-       borderRadius: BorderRadius.all(Radius.circular(15.0)),
-       boxShadow: [
+       color: Colors.pinkAccent,
+       borderRadius: BorderRadius.all(Radius.circular(15.0)), 
+        boxShadow: [
             BoxShadow(
               color: Colors.black87,
               offset: Offset(0.0, 7.0),
               spreadRadius: -7.0,
               blurRadius: 10.0,
             )
-          ], 
+          ],
       ),
-      width: 330.0,
-      height: 200.0,
-      child: Column(
-        children: [
-          SizedBox(
-            height: 7.0
-          ),
-          Text(
-  'Premier League',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
+      
+      width: 315.0,
+      height: 135.0,
+      child:Column(children: <Widget>[
+        SizedBox(
+      height: 10.0
+    ),
+        Text(
+   "Upcoming Match",
+   textAlign: TextAlign.center,
+   style: TextStyle(
       fontSize: 16.0,
       fontFamily: 'Comfortaa',
       fontWeight: FontWeight.w600,
-      color: Colors.grey[800],
+      color: Colors.black,
       )
     ),
     SizedBox(
-            height: 2.0
-          ),
-    Text(
-  '2019 - 2020',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 10.0,
-      fontWeight: FontWeight.w400,
-      color: Colors.grey[800],
-      fontFamily: 'Comfortaa'
-      )
+      height: 10.0
     ),
-    SizedBox(
-            height: 25.0
+         Row(
+        children: <Widget>[
+          SizedBox(
+            width: 25,
           ),
-    Row(
-      children: [
-        SizedBox(
-            width: 90.0
+          Image.network(
+            matchesOfSeason[team].homeTeam.imageUrl,
+            height: 60,
           ),
-      Text(
-  '4',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 60.0,
-      fontWeight: FontWeight.w200,
-      color: Colors.grey[800],
-      fontFamily: 'Comfortaa'
-      )
-    ),
-     SizedBox(
-            width: 25.0
+          SizedBox(
+            width: 45,
           ),
-          Text(
-  '-',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 60.0,
-      fontWeight: FontWeight.w200,
-      color: Colors.grey[800],
-      fontFamily: 'Comfortaa'
-      )
-    ),
-    SizedBox(
-            width: 25.0
+         Text("- VS -",
+         textAlign: TextAlign.center,
+         style: TextStyle(
+           fontSize: 40,
+           fontWeight: FontWeight.w200
+
+         ),),
+         SizedBox(
+            width: 45,
           ),
-          Text(
-  '0',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 60.0,
-      fontWeight: FontWeight.w200,
-      color: Colors.grey[800],
-      fontFamily: 'Comfortaa'
-      )
-    ),
-      ],
-    ),
-    SizedBox(
-            height: 30.0
+           Image.network(
+            matchesOfSeason[team].awayTeam.imageUrl,
+            height: 60,
           ),
-    Row(
-      children: [
-        SizedBox(
-            width: 15.0
-          ),
-Text(
-  '03/02/2020',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 10.0,
-      fontWeight: FontWeight.w400,
-      color: Colors.grey[800],
-      fontFamily: 'Comfortaa'
-      )
-    ),
-     SizedBox(
-            width: 230.0
-          ),
-        Text(
-  'FT',
-    textAlign: TextAlign.center,
-    overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-      fontSize: 10.0,
-      fontWeight: FontWeight.w400,
-      color: Colors.grey[800],
-      fontFamily: 'Comfortaa'
-      )
-    ),  
-      ],
-    ),
         ],
       ),
+       SizedBox(
+      height: 20.0
     ),
-     SizedBox(
-      height: 49.0
+      Text(
+        "Postponed",
+        style: TextStyle(
+          fontSize: 10
+        ),
+      )
+      
+      ],
+      ),
+    
+     
     ),
+   
     
   ],
 )

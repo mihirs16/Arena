@@ -131,8 +131,8 @@ void fillStatsOfTeams (var leagueTableData) {
     var teamStats = new TeamStats();
     teamStats.teamID = teamsOfTheSeason[i].teamID;
     teamStats.posTable = i+1;
-    teamStats.scoredRatio = leagueTableData[i]['seasonGoals'] / leagueTableData[i]['matchesPlayed'];
-    teamStats.concedRatio = (leagueTableData[i]['seasonConceded_away'] + leagueTableData[i]['seasonConceded_home']) / leagueTableData[i]['matchesPlayed'];
+    teamStats.scoredRatio = leagueTableData[i]['seasonGoals'] ;
+    teamStats.concedRatio = (leagueTableData[i]['seasonConceded_away'] + leagueTableData[i]['seasonConceded_home']) ;
     teamStats.wins = leagueTableData[i]['seasonWins_home'] + leagueTableData[i]['seasonWins_away'];
     teamStats.draws = leagueTableData[i]['seasonDraws_home'] + leagueTableData[i]['seasonDraws_away'];
     teamStats.losses = leagueTableData[i]['seasonLosses_away'] + leagueTableData[i]['seasonLosses_home'];
@@ -199,3 +199,4 @@ void setupData () async {
   // fill teamStatsOfTheSeason data
   fillStatsOfTeams(leagueTableData);
 }
+
