@@ -6,7 +6,7 @@ import 'api_call_season.dart';
 void main() async { 
   if (debug)
     print('Retrieving All Pre-data..');
-  await setupData();
+  await setupData(); //ignore the 'Future' warning
 
   runApp(MyApp());
   SystemChrome.setSystemUIOverlayStyle(
