@@ -1,20 +1,18 @@
 import 'dart:convert';
-import 'dart:async';
-import 'dart:ffi';
 import 'package:http/http.dart' as http;
+
+bool debug = true;
 
 class TeamStats {
   int teamID;
   int posTable;
-  String last5rec;
-  Float scoredRatio;
-  Float concedRatio;
+  var scoredRatio;
+  var concedRatio;
+  int wins;
+  int draws;
+  int losses;
   Match lastPlayedMatch;
   Match upcomingMatch;
-
-  TeamStats(var decodedJsonResponse) {
-    //parse and save from json
-  }
 }
 
 class Team {
@@ -22,74 +20,156 @@ class Team {
   var name;
   var imageUrl;
 
-  Team(var decodedJsonResponse) {
-    //parse and save from json
-  }
+  Team.idOnly (this.teamID);
+
+  Team (
+    this.teamID, 
+    this.name, 
+    this.imageUrl
+    );
 }
 
 class Match{
   int id;
   Team homeTeam;
   Team awayTeam;
-  int status;
+  Team winTeam;
+  String status;
   int homeScore;
   int awayScore;
   DateTime dateTime;
 
-  Match(var decodedJsonResponse) {
-    //parse and save from json
-  }
+
 }
 
 
 //---GLOBAL-----
 var teamsOfTheSeason = new List<Team>(20);
 var teamStatsOfTeams = new List<TeamStats>(20);
+var matchesOfSeason = new List<Match>();
+//--------------
 
 
-Future<List<Team>> getTeamDataAtStart() async {
-  print('Fetching Season Contenders..');
-  http.Response response = await http.get(
-    Uri.encodeFull("https://api.footystats.org/league-teams?key=test85g57&league_id=2012"),
-    headers: {
-      "Accept": "application/json",
-    }
-  );
+void fillTeamsOfTheSeason (var leagueTableData) {
+  for (int i=0;i<teamsOfTheSeason.length;i++) {
+    var team = new Team(
+      leagueTableData[i]['id'], 
+      leagueTableData[i]['name'].toString(),
+      leagueTableData[i]['image'].toString()
+    );
+    teamsOfTheSeason[i] = team;
 
-  //print(response.body);
-  var data = json.decode(response.body);
-  var _data = data['data'];
-  
-  var teams = new List<Team>();
-  for (int i=0;i<_data.length;i++) {
-    var team = new Team();
-    team.id = _data[i]['id'];
-    team.name = _data[i]['name'].toString();
-    team.imageUrl = _data[i]['image'].toString();
-    teams.add(team);
-    //print(team.id.toString() + " " + team.name + " " + team.imageUrl);
+    if (debug)
+      print(teamsOfTheSeason[i].name);
   }
-  //for (int i=0;i<teams.length;i++)
-  //  print(teams[i].name);             //UNCOMMENT 48 and 49 for debug
-  return teams;
 }
 
-void getMatchData() async {
-  print('Fetching Match..');
-  http.Response response = await http.get(
+void fillMatchOfTheSeason (var leagueMatchData) {
+  for (int i=0;i<leagueMatchData.length;i++) {
+    var match = new Match();
+    match.id = leagueMatchData[i]['id'];
+    
+    match.homeTeam = new Team.idOnly(leagueMatchData[i]['homeID']);
+    for (int i=0;i<teamsOfTheSeason.length;i++) {
+      if(teamsOfTheSeason[i].teamID == match.homeTeam.teamID) {
+        match.homeTeam.name = teamsOfTheSeason[i].name;
+        match.homeTeam.imageUrl = teamsOfTheSeason[i].imageUrl;
+        break;
+      }
+    }
+
+    match.awayTeam = new Team.idOnly(leagueMatchData[i]['awayID']);
+    for (int i=0;i<teamsOfTheSeason.length;i++) {
+      if(teamsOfTheSeason[i].teamID == match.awayTeam.teamID) {
+        match.awayTeam.name = teamsOfTheSeason[i].name;
+        match.awayTeam.imageUrl = teamsOfTheSeason[i].imageUrl;
+        break;
+      }
+    }
+
+    match.winTeam = new Team.idOnly(leagueMatchData[i]['winningTeam']);
+    for (int i=0;i<teamsOfTheSeason.length;i++) {
+      if(teamsOfTheSeason[i].teamID == match.winTeam.teamID) {
+        match.winTeam.name = teamsOfTheSeason[i].name;
+        match.winTeam.imageUrl = teamsOfTheSeason[i].imageUrl;
+        break;
+      }
+    }
+
+    match.status = leagueMatchData[i]['status'];
+    match.homeScore = leagueMatchData[i]['homeGoals'].length;
+    match.awayScore = leagueMatchData[i]['awayGoals'].length;
+    match.dateTime = new DateTime.fromMillisecondsSinceEpoch(leagueMatchData[i]['date_unix']*1000, isUtc: true);
+    matchesOfSeason.add(match);
+  }
+
+  if (debug){
+    print(matchesOfSeason.length);
+  }
+    
+}
+
+void fillStatsOfTeams (var leagueTableData) {
+  print(leagueTableData[0]);
+  for (int i=0;i<teamsOfTheSeason.length;i++) {
+    var teamStats = new TeamStats();
+    teamStats.teamID = teamsOfTheSeason[i].teamID;
+    teamStats.posTable = i+1;
+    teamStats.scoredRatio = leagueTableData[i]['seasonGoals'] / leagueTableData[i]['matchesPlayed'];
+    teamStats.concedRatio = (leagueTableData[i]['seasonConceded_away'] + leagueTableData[i]['seasonConceded_home']) / leagueTableData[i]['matchesPlayed'];
+    teamStats.wins = leagueTableData[i]['seasonWins_home'] + leagueTableData[i]['seasonWins_away'];
+    teamStats.draws = leagueTableData[i]['seasonDraws_home'] + leagueTableData[i]['seasonDraws_away'];
+    teamStats.losses = leagueTableData[i]['seasonLosses_away'] + leagueTableData[i]['seasonLosses_home'];
+    
+    // for matches of home or away id same as team
+    //  last complete + next match
+    var matchesOfThisTeam = new List<Match>();
+    for (var match in matchesOfSeason) {
+      if (match.awayTeam.teamID == teamStats.teamID || match.homeTeam.teamID == teamStats.teamID)
+        matchesOfThisTeam.add(match);    
+    }
+
+    int j;
+    for (j=0;matchesOfThisTeam[j].status == 'complete';j++) {}
+    teamStats.lastPlayedMatch = matchesOfThisTeam[j-1];
+    teamStats.upcomingMatch = matchesOfThisTeam[j];
+
+    if (debug=true)
+      print(teamStats.concedRatio);
+
+    teamStatsOfTeams[i] = teamStats;
+  }
+}
+
+void setupData () async {
+  // fetch api json: league table
+  http.Response respLeagueTable = await http.get(
     Uri.encodeFull("https://api.footystats.org/league-tables?key=test85g57&league_id=2012"),
     headers: {
       "Accept": "application/json",
     }
   );
+  var leagueTableData = json.decode(respLeagueTable.body);
+  leagueTableData = leagueTableData['data']['league_table'];
 
-  var _league_matches = json.decode(response.body);
-  print(_league_matches['data']['league_table'][0]);
-  // var league_matches = _league_matches['data'];
+
+  // fetch api json: league matches
+  http.Response respLeagueMatches = await http.get(
+    Uri.encodeFull("https://api.footystats.org/league-matches?key=test85g57&league_id=2012"),
+    headers: {
+      "Accept": "application/json",
+    }
+  );
+  var leagueMatchData = json.decode(respLeagueMatches.body);
+  leagueMatchData = leagueMatchData['data'];
+
+
+  // fill teamsOfTheSeason data
+  fillTeamsOfTheSeason(leagueTableData);
   
-  // var match = new Match();
-  // match.id = league_matches[0]['id'];
+  // fill matchesOfSeason data
+  fillMatchOfTheSeason(leagueMatchData);
 
-  // print(league_matches[0]['homeID']);
-  // print(league_matches[0]['awayID']);
+  // fill teamStatsOfTheSeason data
+  fillStatsOfTeams(leagueTableData);
 }
