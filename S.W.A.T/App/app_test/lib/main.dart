@@ -3,15 +3,11 @@ import 'package:flutter/services.dart';
 
 import 'api_call_season.dart';
 
-var teamData;
-
 void main() async { 
-  print('Retrieving All Pre-data..');
-  teamData = await getTeamDataAtStart();
-  
-  for (int i=0;i<teamData.length;i++)
-    print(teamData[i].name);
-  
+  if (debug)
+    print('Retrieving All Pre-data..');
+  await setupData();
+
   runApp(MyApp());
   SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
@@ -76,7 +72,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[0].imageUrl,
+              teamsOfTheSeason[0].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -85,7 +81,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 0;
-              teamlogo = teamData[0].imageUrl;
+              teamlogo = teamsOfTheSeason[0].imageUrl;
             },
           ),
           SizedBox(
@@ -93,7 +89,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[1].imageUrl,
+              teamsOfTheSeason[1].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -101,7 +97,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 1;
-              teamlogo = teamData[1].imageUrl;
+              teamlogo = teamsOfTheSeason[1].imageUrl;
             },
           ),
             ],
@@ -116,7 +112,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[2].imageUrl,
+              teamsOfTheSeason[2].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -124,7 +120,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 2;
-              teamlogo = teamData[2].imageUrl;
+              teamlogo = teamsOfTheSeason[2].imageUrl;
             },
           ),
           SizedBox(
@@ -132,7 +128,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[3].imageUrl,
+              teamsOfTheSeason[3].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -140,7 +136,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 3;
-              teamlogo = teamData[3].imageUrl;
+              teamlogo = teamsOfTheSeason[3].imageUrl;
             },
           ),
             ],
@@ -155,7 +151,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[4].imageUrl,
+              teamsOfTheSeason[4].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -163,7 +159,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 4;
-              teamlogo = teamData[4].imageUrl;
+              teamlogo = teamsOfTheSeason[4].imageUrl;
             },
           ),
           SizedBox(
@@ -171,7 +167,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[5].imageUrl,
+              teamsOfTheSeason[5].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -179,7 +175,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 5;
-              teamlogo = teamData[5].imageUrl;
+              teamlogo = teamsOfTheSeason[5].imageUrl;
             },
           ),
             ],
@@ -194,7 +190,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[6].imageUrl,
+              teamsOfTheSeason[6].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -202,7 +198,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 6;
-              teamlogo = teamData[6].imageUrl;
+              teamlogo = teamsOfTheSeason[6].imageUrl;
             },
           ),
           SizedBox(
@@ -210,7 +206,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[7].imageUrl,
+              teamsOfTheSeason[7].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -218,7 +214,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 7;
-              teamlogo = teamData[7].imageUrl;
+              teamlogo = teamsOfTheSeason[7].imageUrl;
             },
           ),
             ],
@@ -233,7 +229,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child:Image.network(
-              teamData[8].imageUrl,
+              teamsOfTheSeason[8].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -241,7 +237,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 8;
-              teamlogo = teamData[8].imageUrl;
+              teamlogo = teamsOfTheSeason[8].imageUrl;
             },
           ),
           SizedBox(
@@ -249,7 +245,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[9].imageUrl,
+              teamsOfTheSeason[9].imageUrl,
               height: 50,
             ),
            color: Colors.transparent,
@@ -257,7 +253,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 9;
-              teamlogo = teamData[9].imageUrl;
+              teamlogo = teamsOfTheSeason[9].imageUrl;
             },
           ),
             ],
@@ -272,7 +268,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[10].imageUrl,
+              teamsOfTheSeason[10].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -280,7 +276,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 10;
-              teamlogo = teamData[10].imageUrl;
+              teamlogo = teamsOfTheSeason[10].imageUrl;
             },
           ),
           SizedBox(
@@ -288,7 +284,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[11].imageUrl,
+              teamsOfTheSeason[11].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -296,7 +292,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 11;
-              teamlogo = teamData[11].imageUrl;
+              teamlogo = teamsOfTheSeason[11].imageUrl;
             },
           ),
             ],
@@ -311,7 +307,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[12].imageUrl,
+              teamsOfTheSeason[12].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -319,7 +315,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 12;
-              teamlogo = teamData[12].imageUrl;
+              teamlogo = teamsOfTheSeason[12].imageUrl;
             },
           ),
           SizedBox(
@@ -327,7 +323,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[13].imageUrl,
+              teamsOfTheSeason[13].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -335,7 +331,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 13;
-              teamlogo = teamData[13].imageUrl;
+              teamlogo = teamsOfTheSeason[13].imageUrl;
             },
           ),
             ],
@@ -350,7 +346,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[14].imageUrl,
+              teamsOfTheSeason[14].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -358,7 +354,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 14;
-              teamlogo = teamData[14].imageUrl;
+              teamlogo = teamsOfTheSeason[14].imageUrl;
             },
           ),
           SizedBox(
@@ -366,7 +362,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[15].imageUrl,
+              teamsOfTheSeason[15].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -374,7 +370,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 15;
-              teamlogo = teamData[15].imageUrl;
+              teamlogo = teamsOfTheSeason[15].imageUrl;
             },
           ),
             ],
@@ -389,7 +385,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[16].imageUrl,
+              teamsOfTheSeason[16].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -397,7 +393,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 16;
-              teamlogo = teamData[16].imageUrl;
+              teamlogo = teamsOfTheSeason[16].imageUrl;
             },
           ),
           SizedBox(
@@ -405,7 +401,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[17].imageUrl,
+              teamsOfTheSeason[17].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -413,7 +409,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 17;
-              teamlogo = teamData[17].imageUrl;
+              teamlogo = teamsOfTheSeason[17].imageUrl;
             },
           ),
             ],
@@ -428,7 +424,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[18].imageUrl,
+              teamsOfTheSeason[18].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -436,7 +432,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 18;
-              teamlogo = teamData[18].imageUrl;
+              teamlogo = teamsOfTheSeason[18].imageUrl;
             },
           ),
           SizedBox(
@@ -444,7 +440,7 @@ class TeamSelect extends StatelessWidget {
           ),
           RaisedButton(
             child: Image.network(
-              teamData[19].imageUrl,
+              teamsOfTheSeason[19].imageUrl,
               height: 50,
             ),
             color: Colors.transparent,
@@ -452,7 +448,7 @@ class TeamSelect extends StatelessWidget {
             onPressed: (){
               Navigator.pushNamed(context, '/Baseapp');
               team = 19;
-              teamlogo = teamData[19].imageUrl;
+              teamlogo = teamsOfTheSeason[19].imageUrl;
             },
           ),
             ],
