@@ -21,7 +21,6 @@ void main() async {
 
 int team;
 String teamlogo; 
-int total = (teamStatsOfTeams[team].wins + teamStatsOfTeams[team].losses + teamStatsOfTeams[team].draws) ;
 
 class MyApp extends StatelessWidget {
 
@@ -590,7 +589,7 @@ SizedBox(
             width: 145,
           ),
               Text(
-            (teamStatsOfTeams[team].wins + teamStatsOfTeams[team].losses + teamStatsOfTeams[team].draws).toString(),
+            (teamStatsOfTeams[team].matchesPlayed).toString(),
             textAlign: TextAlign.right,
             style: TextStyle(
               color: Colors.grey[800],
@@ -937,7 +936,7 @@ SizedBox(
             width: 25,
           ),
           Image.network(
-            matchesOfSeason[team].homeTeam.imageUrl,
+            teamStatsOfTeams[team].upcomingMatch.homeTeam.imageUrl,
             height: 60,
           ),
           SizedBox(
@@ -954,7 +953,7 @@ SizedBox(
             width: 45,
           ),
            Image.network(
-            matchesOfSeason[team].awayTeam.imageUrl,
+            teamStatsOfTeams[team].upcomingMatch.awayTeam.imageUrl,
             height: 60,
           ),
         ],
@@ -963,7 +962,7 @@ SizedBox(
       height: 20.0
     ),
       Text(
-        "Postponed",
+        teamStatsOfTeams[team].upcomingMatch.dateTime.toString(),
         style: TextStyle(
           fontSize: 10
         ),

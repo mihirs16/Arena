@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-bool debug = false;
+bool debug = true;
 
 class TeamStats {
   int teamID;
@@ -11,6 +11,7 @@ class TeamStats {
   int wins;
   int draws;
   int losses;
+  int matchesPlayed;
   Match lastPlayedMatch;
   Match upcomingMatch;
 }
@@ -50,31 +51,17 @@ var matchesOfSeason = new List<Match>();
 //--------------
 
 
-void fillTeamsOfTheSeason (var leagueTableData, var leagueTeamsData) {
-  if (debug)
-  {
-    print(leagueTableData);
-    print(leagueTeamsData);
-  }
-    
+void fillTeamsOfTheSeason (var leagueTableData) {
   for (int i=0;i<teamsOfTheSeason.length;i++) {
-    int j;
-    for (j=0;j<teamsOfTheSeason.length;j++){
-      if (leagueTeamsData[j]['id'] == leagueTableData[i]['id'])
-        break;
-    }
-    var teamImageUrl = leagueTeamsData[j]['image'].toString();
-
     var team = new Team(
       leagueTableData[i]['id'], 
       leagueTableData[i]['name'].toString(),
-      teamImageUrl
+      leagueTableData[i]['image'].toString()
     );
     teamsOfTheSeason[i] = team;
 
     if (debug)
       print(teamsOfTheSeason[i].name);
-      print(teamsOfTheSeason[i].imageUrl);
   }
 }
 
@@ -124,19 +111,18 @@ void fillMatchOfTheSeason (var leagueMatchData) {
 }
 
 void fillStatsOfTeams (var leagueTableData) {
-  if(debug)
-    print(leagueTableData[0]);
-
+  print(leagueTableData[0]);
   for (int i=0;i<teamsOfTheSeason.length;i++) {
     var teamStats = new TeamStats();
     teamStats.teamID = teamsOfTheSeason[i].teamID;
     teamStats.posTable = i+1;
-    teamStats.scoredRatio = leagueTableData[i]['seasonGoals'] ;
-    teamStats.concedRatio = (leagueTableData[i]['seasonConceded_away'] + leagueTableData[i]['seasonConceded_home']) ;
+    teamStats.scoredRatio = leagueTableData[i]['seasonGoals'] / leagueTableData[i]['matchesPlayed'];
+    teamStats.concedRatio = (leagueTableData[i]['seasonConceded_away'] + leagueTableData[i]['seasonConceded_home']) / leagueTableData[i]['matchesPlayed'];
     teamStats.wins = leagueTableData[i]['seasonWins_home'] + leagueTableData[i]['seasonWins_away'];
     teamStats.draws = leagueTableData[i]['seasonDraws_home'] + leagueTableData[i]['seasonDraws_away'];
     teamStats.losses = leagueTableData[i]['seasonLosses_away'] + leagueTableData[i]['seasonLosses_home'];
-    
+    teamStats.matchesPlayed = teamStats.wins + teamStats.draws + teamStats.losses;
+
     // for matches of home or away id same as team
     //  last complete + next match
     var matchesOfThisTeam = new List<Match>();
@@ -150,7 +136,7 @@ void fillStatsOfTeams (var leagueTableData) {
     teamStats.lastPlayedMatch = matchesOfThisTeam[j-1];
     teamStats.upcomingMatch = matchesOfThisTeam[j];
 
-    if (debug)
+    if (debug=true)
       print(teamStats.concedRatio);
 
     teamStatsOfTeams[i] = teamStats;
@@ -158,16 +144,6 @@ void fillStatsOfTeams (var leagueTableData) {
 }
 
 void setupData () async {
-  // fetch api json: league teams
-  http.Response respLeagueTeams = await http.get(
-    Uri.encodeFull("https://api.footystats.org/league-teams?key=test85g57&league_id=2012"),
-    headers: {
-      "Accept": "application/json",
-    }
-  );
-  var leagueTeamsData = json.decode(respLeagueTeams.body);
-  leagueTeamsData = leagueTeamsData['data'];
-
   // fetch api json: league table
   http.Response respLeagueTable = await http.get(
     Uri.encodeFull("https://api.footystats.org/league-tables?key=test85g57&league_id=2012"),
@@ -191,7 +167,7 @@ void setupData () async {
 
 
   // fill teamsOfTheSeason data
-  fillTeamsOfTheSeason(leagueTableData, leagueTeamsData);
+  fillTeamsOfTheSeason(leagueTableData);
   
   // fill matchesOfSeason data
   fillMatchOfTheSeason(leagueMatchData);
@@ -199,4 +175,3 @@ void setupData () async {
   // fill teamStatsOfTheSeason data
   fillStatsOfTeams(leagueTableData);
 }
-
