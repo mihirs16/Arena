@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 
-bool debug = true;
+bool debug = false;
 
 class TeamStats {
   int teamID;
