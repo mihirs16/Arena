@@ -1458,6 +1458,7 @@ SizedBox(
       width: 330.0,
       height: 540.0,
       child: ListView(
+        physics: NeverScrollableScrollPhysics(),
         padding: EdgeInsets.only(bottom: 15, top: 0, left: 10, right: 10),
         children: [
           SizedBox(
@@ -1507,14 +1508,14 @@ SizedBox(
       
       width: 315.0,
       height: 60.0,
+      
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          SizedBox(
-            width: 10,
-          ),
+        
           Text(
             "Matches",
-            textAlign: TextAlign.left,
+            
             style: TextStyle(
               color: Colors.grey[800],
               fontSize: 30,
@@ -1525,6 +1526,7 @@ SizedBox(
           SizedBox(
             width: 145,
           ),
+          
               Text(
             (teamStatsOfTeams[team].matchesPlayed).toString(),
             textAlign: TextAlign.right,
@@ -1535,9 +1537,7 @@ SizedBox(
               fontWeight: FontWeight.w300,
             ),
           ),
-           SizedBox(
-            width: 10,
-          ),
+          
         ],
       ),
     
@@ -1563,10 +1563,9 @@ SizedBox(
       width: 315.0,
       height: 60.0,
       child: Row(
+         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          SizedBox(
-            width: 10,
-          ),
+         
           Text(
             "Won",
             textAlign: TextAlign.left,
@@ -1590,9 +1589,7 @@ SizedBox(
               fontWeight: FontWeight.w300,
             ),
           ),
-           SizedBox(
-            width: 10,
-          ),
+         
         ],
       ),
     
@@ -1618,10 +1615,9 @@ SizedBox(
       width: 315.0,
       height: 60.0,
       child: Row(
+         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          SizedBox(
-            width: 10,
-          ),
+         
           Text(
             "Lost",
             textAlign: TextAlign.left,
@@ -1633,7 +1629,7 @@ SizedBox(
             ),
           ),
           SizedBox(
-           width: 202,
+           width: 215,
     
           ),
               Text(
@@ -1646,9 +1642,7 @@ SizedBox(
               fontWeight: FontWeight.w300,
             ),
           ),
-           SizedBox(
-            width: 10,
-          ),
+         
         ],
       ),
     
@@ -1674,10 +1668,9 @@ SizedBox(
       width: 315.0,
       height: 60.0,
       child: Row(
+         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          SizedBox(
-            width: 10,
-          ),
+          
           Text(
             "Draws",
             textAlign: TextAlign.left,
@@ -1689,7 +1682,7 @@ SizedBox(
             ),
           ),
           SizedBox(
-           width: 177,
+           width: 190,
     
           ),
               Text(
@@ -1702,9 +1695,7 @@ SizedBox(
               fontWeight: FontWeight.w300,
             ),
           ),
-           SizedBox(
-            width: 10,
-          ),
+         
         ],
       ),
     
@@ -1730,10 +1721,9 @@ SizedBox(
       width: 315.0,
       height: 60.0,
       child: Row(
+         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          SizedBox(
-            width: 10,
-          ),
+         
           Text(
             "Scored",
             textAlign: TextAlign.left,
@@ -1758,9 +1748,7 @@ SizedBox(
               fontWeight: FontWeight.w300,
             ),
           ),
-           SizedBox(
-            width: 10,
-          ),
+          
         ],
       ),
     
@@ -1787,10 +1775,9 @@ SizedBox(
       width: 315.0,
       height: 60.0,
       child: Row(
+         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          SizedBox(
-            width: 10,
-          ),
+          
           Text(
             "Conceded",
             textAlign: TextAlign.left,
@@ -1815,9 +1802,7 @@ SizedBox(
               fontWeight: FontWeight.w300,
             ),
           ),
-           SizedBox(
-            width: 10,
-          ),
+          
         ],
       ),
     
