@@ -45,7 +45,7 @@ class TeamSelect extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
-          "  Select Your Favourite Team :",
+          "  Leaderboard :",
           textAlign: TextAlign.center,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(
