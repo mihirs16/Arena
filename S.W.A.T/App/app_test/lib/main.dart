@@ -57,7 +57,7 @@ class TeamSelect extends StatelessWidget {
       ),
       body: Center(
         child: ListView(
-          padding: const EdgeInsets.only(bottom: 10, top: 25, left: 20, right: 20),
+          padding: const EdgeInsets.only(bottom: 10, top: 25, left: 15, right: 15),
         children: [
           
       Row(
@@ -74,7 +74,7 @@ class TeamSelect extends StatelessWidget {
             ),
           ),
            SizedBox(
-                width: 275,
+                width: 265,
           ),
 
           Text(
@@ -694,7 +694,7 @@ class TeamSelect extends StatelessWidget {
       child: Row(
         children: <Widget>[
           SizedBox(
-                width: 30,
+                width: 27,
           ),
          Text(
             teamStatsOfTeams[9].posTable.toString(),
@@ -759,7 +759,7 @@ class TeamSelect extends StatelessWidget {
       child: Row(
         children: <Widget>[
           SizedBox(
-                width: 30,
+                width: 27,
           ),
          Text(
             teamStatsOfTeams[10].posTable.toString(),
@@ -824,7 +824,7 @@ class TeamSelect extends StatelessWidget {
       child: Row(
         children: <Widget>[
           SizedBox(
-                width: 30,
+                width: 27,
           ),
          Text(
             teamStatsOfTeams[11].posTable.toString(),
@@ -889,7 +889,7 @@ class TeamSelect extends StatelessWidget {
       child: Row(
         children: <Widget>[
           SizedBox(
-                width: 30,
+                width: 27,
           ),
          Text(
             teamStatsOfTeams[12].posTable.toString(),
@@ -954,7 +954,7 @@ class TeamSelect extends StatelessWidget {
       child: Row(
         children: <Widget>[
           SizedBox(
-                width: 30,
+                width: 27,
           ),
          Text(
             teamStatsOfTeams[13].posTable.toString(),
@@ -1019,7 +1019,7 @@ class TeamSelect extends StatelessWidget {
       child: Row(
         children: <Widget>[
           SizedBox(
-                width: 30,
+                width: 27,
           ),
          Text(
             teamStatsOfTeams[14].posTable.toString(),
@@ -1084,7 +1084,7 @@ class TeamSelect extends StatelessWidget {
       child: Row(
         children: <Widget>[
           SizedBox(
-                width: 30,
+                width: 27,
           ),
          Text(
             teamStatsOfTeams[15].posTable.toString(),
@@ -1149,7 +1149,7 @@ class TeamSelect extends StatelessWidget {
       child: Row(
         children: <Widget>[
           SizedBox(
-                width: 30,
+                width: 27,
           ),
          Text(
             teamStatsOfTeams[16].posTable.toString(),
@@ -1214,7 +1214,7 @@ class TeamSelect extends StatelessWidget {
       child: Row(
         children: <Widget>[
           SizedBox(
-                width: 30,
+                width: 27,
           ),
          Text(
             teamStatsOfTeams[17].posTable.toString(),
@@ -1279,7 +1279,7 @@ class TeamSelect extends StatelessWidget {
       child: Row(
         children: <Widget>[
           SizedBox(
-                width: 30,
+                width: 27,
           ),
          Text(
             teamStatsOfTeams[18].posTable.toString(),
@@ -1344,7 +1344,7 @@ class TeamSelect extends StatelessWidget {
       child: Row(
         children: <Widget>[
           SizedBox(
-                width: 30,
+                width: 27,
           ),
          Text(
             teamStatsOfTeams[19].posTable.toString(),
@@ -1405,7 +1405,7 @@ class Baseapp extends StatelessWidget {
         backgroundColor: Colors.white,
         body: Center(
   child: ListView(
-    padding: EdgeInsets.only(bottom: 15, top: 0, left: 30, right: 30),
+    padding: EdgeInsets.only(bottom: 15, top: 0, left: 25, right: 25),
   children: [
      SizedBox(
             height: 40.0
@@ -1457,7 +1457,8 @@ SizedBox(
       
       width: 330.0,
       height: 540.0,
-      child: Column(
+      child: ListView(
+        padding: EdgeInsets.only(bottom: 15, top: 0, left: 10, right: 10),
         children: [
           SizedBox(
             height: 7.0
