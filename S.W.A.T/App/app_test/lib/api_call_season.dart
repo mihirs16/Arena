@@ -119,7 +119,8 @@ void fillMatchOfTheSeason (var leagueMatchData) {
 }
 
 void fillStatsOfTeams (var leagueTableData) {
-  print(leagueTableData[0]);
+ if(debug)   
+    print(leagueTableData[0]);
   for (int i=0;i<teamsOfTheSeason.length;i++) {
     var teamStats = new TeamStats();
     teamStats.teamID = teamsOfTheSeason[i].teamID;
