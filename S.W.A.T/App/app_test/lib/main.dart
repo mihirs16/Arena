@@ -12,7 +12,7 @@ void main() async {
   SystemChrome.setSystemUIOverlayStyle (
       SystemUiOverlayStyle (
         statusBarColor: Colors.white, //top bar color
-        statusBarIconBrightness: Brightness.dark, //top bar icons
+        statusBarIconBrightness: Brightness.light, //top bar icons
         systemNavigationBarColor: Colors.white, //bottom bar color
         systemNavigationBarIconBrightness: Brightness.dark, //bottom bar icons
     )
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       home: TeamSelect(),
       routes: <String, WidgetBuilder> {
       '/Baseapp' : (context) => Baseapp(),
-      '/TeamSelect' : (context) => TeamSelect()
+      '/TeamSelect' : (context) => TeamSelect(),
       },
     );
   }
@@ -805,11 +805,11 @@ SizedBox(
             ),
           ),
           SizedBox(
-           width: 168,
+           width: 144,
     
           ),
               Text(
-            teamStatsOfTeams[team].scoredRatio.toString(),
+            teamStatsOfTeams[team].scoredRatio.toStringAsFixed(2),
             textAlign: TextAlign.right,
             style: TextStyle(
               color: Colors.grey[800],
@@ -862,11 +862,11 @@ SizedBox(
             ),
           ),
           SizedBox(
-           width: 128,
+           width: 104,
     
           ),
               Text(
-             teamStatsOfTeams[team].concedRatio.toString(),
+             teamStatsOfTeams[team].concedRatio.toStringAsFixed(2),
             textAlign: TextAlign.right,
             style: TextStyle(
               color: Colors.grey[800],
@@ -963,15 +963,16 @@ SizedBox(
         style: TextStyle(
           fontSize: 10
         ),
-      )
+      ),
+      
       
       ],
       ),
     
      
     ),
-   
     
+   
   ],
 )
       ),
