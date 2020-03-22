@@ -51,17 +51,21 @@ var matchesOfSeason = new List<Match>();
 //--------------
 
 
-void fillTeamsOfTheSeason (var leagueTableData) {
+void fillTeamsOfTheSeason (var leagueTableData, var leagueTeamData) {
+  
+  print(leagueTeamData);
   for (int i=0;i<teamsOfTheSeason.length;i++) {
+    var j;
+    for(j=0;leagueTableData[i]['id']!=leagueTeamData[j]['id'];j++) {}
     var team = new Team(
       leagueTableData[i]['id'], 
       leagueTableData[i]['name'].toString(),
-      leagueTableData[i]['image'].toString()
+      leagueTeamData[j]['image'].toString()
     );
     teamsOfTheSeason[i] = team;
 
     if (debug)
-      print(teamsOfTheSeason[i].name);
+      print(teamsOfTheSeason[i].imageUrl);
   }
 }
 
@@ -144,6 +148,18 @@ void fillStatsOfTeams (var leagueTableData) {
 }
 
 void setupData () async {
+
+  // fetch api json: league matches
+  http.Response respLeagueTeams = await http.get(
+    Uri.encodeFull("https://api.footystats.org/league-teams?key=test85g57&league_id=2012"),
+    headers: {
+      "Accept": "application/json",
+    }
+  );
+  var leagueTeamData = json.decode(respLeagueTeams.body);
+  leagueTeamData = leagueTeamData['data'];
+
+
   // fetch api json: league table
   http.Response respLeagueTable = await http.get(
     Uri.encodeFull("https://api.footystats.org/league-tables?key=test85g57&league_id=2012"),
@@ -167,7 +183,7 @@ void setupData () async {
 
 
   // fill teamsOfTheSeason data
-  fillTeamsOfTheSeason(leagueTableData);
+  fillTeamsOfTheSeason(leagueTableData, leagueTeamData);
   
   // fill matchesOfSeason data
   fillMatchOfTheSeason(leagueMatchData);

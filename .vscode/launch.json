@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "Dart",
-            "program": "bin/main.dart",
+            "program": "S.W.A.T/App/app_test/lib/main.dart",
             "request": "launch",
             "type": "dart"
         }

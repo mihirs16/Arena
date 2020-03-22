@@ -9,22 +9,20 @@ void main() async {
   await setupData(); //ignore the 'Future' warning
 
   runApp(MyApp());
-  SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(
+  SystemChrome.setSystemUIOverlayStyle (
+      SystemUiOverlayStyle (
         statusBarColor: Colors.white, //top bar color
         statusBarIconBrightness: Brightness.dark, //top bar icons
         systemNavigationBarColor: Colors.white, //bottom bar color
         systemNavigationBarIconBrightness: Brightness.dark, //bottom bar icons
-      )
-    );
+    )
+  );
 }
 
 int team;
 String teamlogo; 
 
 class MyApp extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,7 +35,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 
 class TeamSelect extends StatelessWidget {
   @override
