@@ -12,7 +12,7 @@ void main() async {
   SystemChrome.setSystemUIOverlayStyle (
       SystemUiOverlayStyle (
         statusBarColor: Colors.white, //top bar color
-        statusBarIconBrightness: Brightness.light, //top bar icons
+        statusBarIconBrightness: Brightness.dark, //top bar icons
         systemNavigationBarColor: Colors.white, //bottom bar color
         systemNavigationBarIconBrightness: Brightness.dark, //bottom bar icons
     )
@@ -44,6 +44,7 @@ class TeamSelect extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        brightness: Brightness.light,
         title: Text(
           "  Leaderboard :",
           textAlign: TextAlign.center,
