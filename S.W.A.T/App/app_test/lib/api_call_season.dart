@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 
 bool debug = true;
@@ -38,7 +39,7 @@ class Match{
   String status;
   int homeScore;
   int awayScore;
-  DateTime dateTime;
+  String dateTime;
 
 
 }
@@ -104,7 +105,10 @@ void fillMatchOfTheSeason (var leagueMatchData) {
     match.status = leagueMatchData[i]['status'];
     match.homeScore = leagueMatchData[i]['homeGoals'].length;
     match.awayScore = leagueMatchData[i]['awayGoals'].length;
-    match.dateTime = new DateTime.fromMillisecondsSinceEpoch(leagueMatchData[i]['date_unix']*1000, isUtc: true);
+    var dateRetrieved = new DateTime.fromMillisecondsSinceEpoch(leagueMatchData[i]['date_unix']*1000, isUtc: true);
+    var formatterDate = new DateFormat('dd-MM-yyyy');
+    var formatterTime = new DateFormat('hh:mm:ss');
+    match.dateTime = formatterDate.format(dateRetrieved).toString() + " " + formatterTime.format(dateRetrieved);
     matchesOfSeason.add(match);
   }
 
