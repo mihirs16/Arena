@@ -2573,7 +2573,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 416,
+									"left": 418,
 									"top": 808,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -2594,7 +2594,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 416,
+									"left": 420,
 									"top": 823,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -2615,7 +2615,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 424,
-									"top": 591,
+									"top": 615,
 									"width": 59.6298828125,
 									"height": 13,
 									"alpha": 0.7853982566915609,
@@ -2638,7 +2638,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 444,
-									"top": 583,
+									"top": 607,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -2659,7 +2659,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 403,
-									"top": 576,
+									"top": 600,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -2679,8 +2679,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 371,
-									"top": 810,
+									"left": 372,
+									"top": 815,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -2699,8 +2699,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 374,
-									"top": 823,
+									"left": 377,
+									"top": 828,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -2719,8 +2719,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 366,
-									"top": 782,
+									"left": 364,
+									"top": 789,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -2767,7 +2767,7 @@
 								"$ref": "AAAAAAFxJUeLUNOD1m8="
 							},
 							"lineStyle": 1,
-							"points": "416:561;416:800;345:802",
+							"points": "416:585;416:800;345:811",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFxJWffH/jylrk="
@@ -4147,6 +4147,275 @@
 							"headQualifiersCompartment": {
 								"$ref": "AAAAAAFxJXpbXgd0g4k="
 							}
+						},
+						{
+							"_type": "UMLAssociationView",
+							"_id": "AAAAAAFxJrnFsHcGslM=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"model": {
+								"$ref": "AAAAAAFxJrnFrHcCeVI="
+							},
+							"subViews": [
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFxJrnFsHcHCnk=",
+									"_parent": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									},
+									"model": {
+										"$ref": "AAAAAAFxJrnFrHcCeVI="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 415,
+									"top": 811,
+									"height": 13,
+									"alpha": 1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									},
+									"edgePosition": 1
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFxJrnFsHcIIfw=",
+									"_parent": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									},
+									"model": {
+										"$ref": "AAAAAAFxJrnFrHcCeVI="
+									},
+									"visible": null,
+									"font": "Arial;13;0",
+									"left": 415,
+									"top": 796,
+									"height": 13,
+									"alpha": 1.5707963267948966,
+									"distance": 30,
+									"hostEdge": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									},
+									"edgePosition": 1
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFxJrnFsHcJTzU=",
+									"_parent": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									},
+									"model": {
+										"$ref": "AAAAAAFxJrnFrHcCeVI="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 416,
+									"top": 840,
+									"height": 13,
+									"alpha": -1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									},
+									"edgePosition": 1
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFxJrnFsHcKyTY=",
+									"_parent": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									},
+									"model": {
+										"$ref": "AAAAAAFxJrnFrXcDHtQ="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 431,
+									"top": 604,
+									"height": 13,
+									"alpha": 0.5235987755982988,
+									"distance": 30,
+									"hostEdge": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									},
+									"edgePosition": 2
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFxJrnFsHcLm0M=",
+									"_parent": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									},
+									"model": {
+										"$ref": "AAAAAAFxJrnFrXcDHtQ="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 444,
+									"top": 607,
+									"height": 13,
+									"alpha": 0.7853981633974483,
+									"distance": 40,
+									"hostEdge": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									},
+									"edgePosition": 2
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFxJrnFsHcMgY4=",
+									"_parent": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									},
+									"model": {
+										"$ref": "AAAAAAFxJrnFrXcDHtQ="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 403,
+									"top": 600,
+									"height": 13,
+									"alpha": -0.5235987755982988,
+									"distance": 25,
+									"hostEdge": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									},
+									"edgePosition": 2
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFxJrnFsXcNsOI=",
+									"_parent": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									},
+									"model": {
+										"$ref": "AAAAAAFxJrnFrXcEcyE="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 1060,
+									"top": 808,
+									"height": 13,
+									"alpha": -0.5235987755982988,
+									"distance": 30,
+									"hostEdge": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									}
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFxJrnFsXcOr18=",
+									"_parent": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									},
+									"model": {
+										"$ref": "AAAAAAFxJrnFrXcEcyE="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 1058,
+									"top": 794,
+									"height": 13,
+									"alpha": -0.7853981633974483,
+									"distance": 40,
+									"hostEdge": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									}
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAFxJrnFsXcPhfQ=",
+									"_parent": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									},
+									"model": {
+										"$ref": "AAAAAAFxJrnFrXcEcyE="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 1065,
+									"top": 835,
+									"height": 13,
+									"alpha": 0.5235987755982988,
+									"distance": 25,
+									"hostEdge": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									}
+								},
+								{
+									"_type": "UMLQualifierCompartmentView",
+									"_id": "AAAAAAFxJrnFsXcQ3zY=",
+									"_parent": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									},
+									"model": {
+										"$ref": "AAAAAAFxJrnFrXcDHtQ="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLQualifierCompartmentView",
+									"_id": "AAAAAAFxJrnFsXcRGUQ=",
+									"_parent": {
+										"$ref": "AAAAAAFxJrnFsHcGslM="
+									},
+									"model": {
+										"$ref": "AAAAAAFxJrnFrXcEcyE="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"width": 10,
+									"height": 10
+								}
+							],
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFxJV8E0ugHA6A="
+							},
+							"tail": {
+								"$ref": "AAAAAAFxJUeLUNOD1m8="
+							},
+							"lineStyle": 1,
+							"points": "416:585;416:832;1087:829",
+							"showVisibility": true,
+							"nameLabel": {
+								"$ref": "AAAAAAFxJrnFsHcHCnk="
+							},
+							"stereotypeLabel": {
+								"$ref": "AAAAAAFxJrnFsHcIIfw="
+							},
+							"propertyLabel": {
+								"$ref": "AAAAAAFxJrnFsHcJTzU="
+							},
+							"tailRoleNameLabel": {
+								"$ref": "AAAAAAFxJrnFsHcKyTY="
+							},
+							"tailPropertyLabel": {
+								"$ref": "AAAAAAFxJrnFsHcLm0M="
+							},
+							"tailMultiplicityLabel": {
+								"$ref": "AAAAAAFxJrnFsHcMgY4="
+							},
+							"headRoleNameLabel": {
+								"$ref": "AAAAAAFxJrnFsXcNsOI="
+							},
+							"headPropertyLabel": {
+								"$ref": "AAAAAAFxJrnFsXcOr18="
+							},
+							"headMultiplicityLabel": {
+								"$ref": "AAAAAAFxJrnFsXcPhfQ="
+							},
+							"tailQualifiersCompartment": {
+								"$ref": "AAAAAAFxJrnFsXcQ3zY="
+							},
+							"headQualifiersCompartment": {
+								"$ref": "AAAAAAFxJrnFsXcRGUQ="
+							}
 						}
 					]
 				},
@@ -4253,6 +4522,34 @@
 									"$ref": "AAAAAAFxJViM3Nx4qe8="
 								}
 							}
+						},
+						{
+							"_type": "UMLAssociation",
+							"_id": "AAAAAAFxJrnFrHcCeVI=",
+							"_parent": {
+								"$ref": "AAAAAAFxJUeLUNOB5Z4="
+							},
+							"end1": {
+								"_type": "UMLAssociationEnd",
+								"_id": "AAAAAAFxJrnFrXcDHtQ=",
+								"_parent": {
+									"$ref": "AAAAAAFxJrnFrHcCeVI="
+								},
+								"reference": {
+									"$ref": "AAAAAAFxJUeLUNOB5Z4="
+								},
+								"navigable": false
+							},
+							"end2": {
+								"_type": "UMLAssociationEnd",
+								"_id": "AAAAAAFxJrnFrXcEcyE=",
+								"_parent": {
+									"$ref": "AAAAAAFxJrnFrHcCeVI="
+								},
+								"reference": {
+									"$ref": "AAAAAAFxJV8E0ugFtc0="
+								}
+							}
 						}
 					],
 					"attributes": [
@@ -4262,7 +4559,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUeLUNOB5Z4="
 							},
-							"name": "int teamID"
+							"name": "int teamID",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4270,7 +4568,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUeLUNOB5Z4="
 							},
-							"name": "int posTable"
+							"name": "int posTable",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4278,7 +4577,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUeLUNOB5Z4="
 							},
-							"name": "var scoredRatio"
+							"name": "var scoredRatio",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4286,7 +4586,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUeLUNOB5Z4="
 							},
-							"name": "var concedRatio"
+							"name": "var concedRatio",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4294,7 +4595,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUeLUNOB5Z4="
 							},
-							"name": "int wins"
+							"name": "int wins",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4302,7 +4604,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUeLUNOB5Z4="
 							},
-							"name": "int draws"
+							"name": "int draws",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4310,7 +4613,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUeLUNOB5Z4="
 							},
-							"name": "int losses"
+							"name": "int losses",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4318,7 +4622,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUeLUNOB5Z4="
 							},
-							"name": "int matchesPlayed"
+							"name": "int matchesPlayed",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4326,7 +4631,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUeLUNOB5Z4="
 							},
-							"name": "Match lastPlayedMatch"
+							"name": "Match lastPlayedMatch",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4334,7 +4640,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUeLUNOB5Z4="
 							},
-							"name": "Match upcomingMatch"
+							"name": "Match upcomingMatch",
+							"type": ""
 						}
 					]
 				},
@@ -4410,7 +4717,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUimtdOtrk8="
 							},
-							"name": "var teamID"
+							"name": "var teamID",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4418,7 +4726,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUimtdOtrk8="
 							},
-							"name": "var name"
+							"name": "var name",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4426,7 +4735,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUimtdOtrk8="
 							},
-							"name": "var imageUrl"
+							"name": "var imageUrl",
+							"type": ""
 						}
 					]
 				},
@@ -4502,7 +4812,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUjn3NPXQ6s="
 							},
-							"name": "int id"
+							"name": "int id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4510,7 +4821,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUjn3NPXQ6s="
 							},
-							"name": "Team homeTeam"
+							"name": "Team homeTeam",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4518,7 +4830,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUjn3NPXQ6s="
 							},
-							"name": "Team awayTeam"
+							"name": "Team awayTeam",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4526,7 +4839,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUjn3NPXQ6s="
 							},
-							"name": "Team winTeam"
+							"name": "Team winTeam",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4534,7 +4848,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUjn3NPXQ6s="
 							},
-							"name": "String status"
+							"name": "String status",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4542,7 +4857,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUjn3NPXQ6s="
 							},
-							"name": "int homeScore"
+							"name": "int homeScore",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4550,7 +4866,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUjn3NPXQ6s="
 							},
-							"name": "int awayScore"
+							"name": "int awayScore",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4558,7 +4875,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJUjn3NPXQ6s="
 							},
-							"name": "String dateTime"
+							"name": "String dateTime",
+							"type": ""
 						}
 					]
 				},
@@ -4693,7 +5011,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJVLha9S0GoI="
 							},
-							"name": "api_leagueMatches"
+							"name": "api_leagueMatches",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4701,7 +5020,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJVLha9S0GoI="
 							},
-							"name": "api_leagueTable"
+							"name": "api_leagueTable",
+							"type": ""
 						}
 					]
 				},
@@ -4758,7 +5078,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJViM3Nx4qe8="
 							},
-							"name": "int posTable"
+							"name": "int posTable",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4766,7 +5087,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJViM3Nx4qe8="
 							},
-							"name": "var imageUrl"
+							"name": "var imageUrl",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4774,7 +5096,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJViM3Nx4qe8="
 							},
-							"name": "int points"
+							"name": "int points",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4782,7 +5105,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJViM3Nx4qe8="
 							},
-							"name": "var teamID"
+							"name": "var teamID",
+							"type": ""
 						}
 					]
 				},
@@ -4800,7 +5124,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJV8E0ugFtc0="
 							},
-							"name": "var imageUrl"
+							"name": "var imageUrl",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4808,7 +5133,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJV8E0ugFtc0="
 							},
-							"name": "var name"
+							"name": "var name",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4816,7 +5142,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJV8E0ugFtc0="
 							},
-							"name": "var teamID"
+							"name": "var teamID",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4824,7 +5151,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJV8E0ugFtc0="
 							},
-							"name": "int matchesPlayed"
+							"name": "int matchesPlayed",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4832,7 +5160,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJV8E0ugFtc0="
 							},
-							"name": "int wins"
+							"name": "int wins",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4840,7 +5169,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJV8E0ugFtc0="
 							},
-							"name": "int losses"
+							"name": "int losses",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4848,7 +5178,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJV8E0ugFtc0="
 							},
-							"name": "int draws"
+							"name": "int draws",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4856,7 +5187,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJV8E0ugFtc0="
 							},
-							"name": "var scoredRatio"
+							"name": "var scoredRatio",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4864,7 +5196,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJV8E0ugFtc0="
 							},
-							"name": "var concedRatio"
+							"name": "var concedRatio",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4872,7 +5205,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJV8E0ugFtc0="
 							},
-							"name": "var upcomingMatch[homeTeam].imageUrl"
+							"name": "var upcomingMatch[homeTeam].imageUrl",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4880,7 +5214,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJV8E0ugFtc0="
 							},
-							"name": "var upcomingMatch[awayTeam].imageUrl"
+							"name": "var upcomingMatch[awayTeam].imageUrl",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4888,7 +5223,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFxJV8E0ugFtc0="
 							},
-							"name": "String upcomingMatch[teamID].dateTime"
+							"name": "String upcomingMatch[teamID].dateTime",
+							"type": ""
 						}
 					]
 				}
