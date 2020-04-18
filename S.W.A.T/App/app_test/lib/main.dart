@@ -61,36 +61,32 @@ class TeamSelect extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 10, top: 25, left: 15, right: 15),
         children: [
           
-      Row(
-        children: <Widget>[
-          SizedBox(
-                width: 22,
-          ),
-         Text(
-           "Rank",
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
-              color: Colors.grey[900],
+      Padding(
+        padding: const EdgeInsets.only(top: 0, bottom: 5, left: 20, right: 20),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            
+           Text(
+             "Rank",
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w400,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 265,
-          ),
-
-          Text(
-            "Points" ,
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
-              color: Colors.grey[900],
+             
+            Text(
+              "Points" ,
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w400,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-          SizedBox(
-            height: 2.0,
-          ),
+          
              Container(
       decoration: BoxDecoration(
        color: Colors.pinkAccent,
@@ -107,48 +103,44 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 30,
-          ),
-         Text(
-            teamStatsOfTeams[0].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:25.0, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            
+           Text(
+              teamStatsOfTeams[0].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 100,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[0].imageUrl,
-              height: 40,
+             
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[0].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 0;
+                teamlogo = teamsOfTheSeason[0].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 0;
-              teamlogo = teamsOfTheSeason[0].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[0].wins * 3) + teamStatsOfTeams[0].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            
+            Text(
+              ((teamStatsOfTeams[0].wins * 3) + teamStatsOfTeams[0].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -172,48 +164,43 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 30,
-          ),
-         Text(
-            teamStatsOfTeams[1].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:25.0, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+           Text(
+              teamStatsOfTeams[1].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 100,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[1].imageUrl,
-              height: 40,
+            
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[1].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 1;
+                teamlogo = teamsOfTheSeason[1].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 1;
-              teamlogo = teamsOfTheSeason[1].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[1].wins * 3) + teamStatsOfTeams[1].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            
+            Text(
+              ((teamStatsOfTeams[1].wins * 3) + teamStatsOfTeams[1].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -237,48 +224,44 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 30,
-          ),
-         Text(
-            teamStatsOfTeams[2].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:25.0, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            
+           Text(
+              teamStatsOfTeams[2].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 100,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[2].imageUrl,
-              height: 40,
+             
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[2].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 2;
+                teamlogo = teamsOfTheSeason[2].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 2;
-              teamlogo = teamsOfTheSeason[2].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[2].wins * 3) + teamStatsOfTeams[2].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            
+            Text(
+              ((teamStatsOfTeams[2].wins * 3) + teamStatsOfTeams[2].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -302,48 +285,41 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 30,
-          ),
-         Text(
-            teamStatsOfTeams[3].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:25.0, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+           Text(
+              teamStatsOfTeams[3].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 100,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[3].imageUrl,
-              height: 40,
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[3].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 3;
+                teamlogo = teamsOfTheSeason[3].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 3;
-              teamlogo = teamsOfTheSeason[3].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[3].wins * 3) + teamStatsOfTeams[3].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            Text(
+              ((teamStatsOfTeams[3].wins * 3) + teamStatsOfTeams[3].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -367,48 +343,41 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 30,
-          ),
-         Text(
-            teamStatsOfTeams[4].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:25.0, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+           Text(
+              teamStatsOfTeams[4].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 100,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[4].imageUrl,
-              height: 40,
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[4].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 4;
+                teamlogo = teamsOfTheSeason[4].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 4;
-              teamlogo = teamsOfTheSeason[4].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[4].wins * 3) + teamStatsOfTeams[4].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            Text(
+              ((teamStatsOfTeams[4].wins * 3) + teamStatsOfTeams[4].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -432,48 +401,41 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 30,
-          ),
-         Text(
-            teamStatsOfTeams[5].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:25.0, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+           Text(
+              teamStatsOfTeams[5].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 100,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[5].imageUrl,
-              height: 40,
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[5].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 5;
+                teamlogo = teamsOfTheSeason[5].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 5;
-              teamlogo = teamsOfTheSeason[5].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[5].wins * 3) + teamStatsOfTeams[5].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            Text(
+              ((teamStatsOfTeams[5].wins * 3) + teamStatsOfTeams[5].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -497,48 +459,41 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 30,
-          ),
-         Text(
-            teamStatsOfTeams[6].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:25.0, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+           Text(
+              teamStatsOfTeams[6].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 100,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[6].imageUrl,
-              height: 40,
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[6].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 6;
+                teamlogo = teamsOfTheSeason[6].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 6;
-              teamlogo = teamsOfTheSeason[6].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[6].wins * 3) + teamStatsOfTeams[6].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            Text(
+              ((teamStatsOfTeams[6].wins * 3) + teamStatsOfTeams[6].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -562,48 +517,41 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 30,
-          ),
-         Text(
-            teamStatsOfTeams[7].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:25.0, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+           Text(
+              teamStatsOfTeams[7].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 100,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[7].imageUrl,
-              height: 40,
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[7].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 7;
+                teamlogo = teamsOfTheSeason[7].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 7;
-              teamlogo = teamsOfTheSeason[7].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[7].wins * 3) + teamStatsOfTeams[7].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            Text(
+              ((teamStatsOfTeams[7].wins * 3) + teamStatsOfTeams[7].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -627,48 +575,41 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 30,
-          ),
-         Text(
-            teamStatsOfTeams[8].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:25.0, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+           Text(
+              teamStatsOfTeams[8].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 100,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[8].imageUrl,
-              height: 40,
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[8].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 8;
+                teamlogo = teamsOfTheSeason[8].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 8;
-              teamlogo = teamsOfTheSeason[8].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[8].wins * 3) + teamStatsOfTeams[8].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            Text(
+              ((teamStatsOfTeams[8].wins * 3) + teamStatsOfTeams[8].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -692,48 +633,44 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 27,
-          ),
-         Text(
-            teamStatsOfTeams[9].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:16, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            
+           Text(
+              teamStatsOfTeams[9].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 92,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[9].imageUrl,
-              height: 40,
+             
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[9].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 9;
+                teamlogo = teamsOfTheSeason[9].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 9;
-              teamlogo = teamsOfTheSeason[9].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[9].wins * 3) + teamStatsOfTeams[9].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            
+            Text(
+              ((teamStatsOfTeams[9].wins * 3) + teamStatsOfTeams[9].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -757,48 +694,41 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 27,
-          ),
-         Text(
-            teamStatsOfTeams[10].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:16, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+           Text(
+              teamStatsOfTeams[10].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 92,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[10].imageUrl,
-              height: 40,
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[10].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 10;
+                teamlogo = teamsOfTheSeason[10].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 10;
-              teamlogo = teamsOfTheSeason[10].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[10].wins * 3) + teamStatsOfTeams[10].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            Text(
+              ((teamStatsOfTeams[10].wins * 3) + teamStatsOfTeams[10].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -822,48 +752,42 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 27,
-          ),
-         Text(
-            teamStatsOfTeams[11].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:16, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+           Text(
+              teamStatsOfTeams[11].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 92,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[11].imageUrl,
-              height: 40,
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[11].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 11;
+                teamlogo = teamsOfTheSeason[11].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 11;
-              teamlogo = teamsOfTheSeason[11].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[11].wins * 3) + teamStatsOfTeams[11].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            
+            Text(
+              ((teamStatsOfTeams[11].wins * 3) + teamStatsOfTeams[11].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -887,48 +811,44 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 27,
-          ),
-         Text(
-            teamStatsOfTeams[12].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:16, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+           
+           Text(
+              teamStatsOfTeams[12].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 92,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[12].imageUrl,
-              height: 40,
+            
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[12].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 12;
+                teamlogo = teamsOfTheSeason[12].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 12;
-              teamlogo = teamsOfTheSeason[12].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[12].wins * 3) + teamStatsOfTeams[12].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            
+            Text(
+              ((teamStatsOfTeams[12].wins * 3) + teamStatsOfTeams[12].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -952,48 +872,44 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 27,
-          ),
-         Text(
-            teamStatsOfTeams[13].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:16, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            
+           Text(
+              teamStatsOfTeams[13].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 92,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[13].imageUrl,
-              height: 40,
+             
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[13].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 13;
+                teamlogo = teamsOfTheSeason[13].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 13;
-              teamlogo = teamsOfTheSeason[13].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[13].wins * 3) + teamStatsOfTeams[13].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            
+            Text(
+              ((teamStatsOfTeams[13].wins * 3) + teamStatsOfTeams[13].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -1017,48 +933,44 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 27,
-          ),
-         Text(
-            teamStatsOfTeams[14].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:16, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            
+           Text(
+              teamStatsOfTeams[14].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 92,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[14].imageUrl,
-              height: 40,
+             
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[14].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 14;
+                teamlogo = teamsOfTheSeason[14].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 14;
-              teamlogo = teamsOfTheSeason[14].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[14].wins * 3) + teamStatsOfTeams[14].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            
+            Text(
+              ((teamStatsOfTeams[14].wins * 3) + teamStatsOfTeams[14].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -1082,48 +994,44 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 27,
-          ),
-         Text(
-            teamStatsOfTeams[15].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:16, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            
+           Text(
+              teamStatsOfTeams[15].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 92,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[15].imageUrl,
-              height: 40,
+             
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[15].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 15;
+                teamlogo = teamsOfTheSeason[15].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 15;
-              teamlogo = teamsOfTheSeason[15].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[15].wins * 3) + teamStatsOfTeams[15].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            
+            Text(
+              ((teamStatsOfTeams[15].wins * 3) + teamStatsOfTeams[15].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -1147,48 +1055,44 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 27,
-          ),
-         Text(
-            teamStatsOfTeams[16].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:16, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            
+           Text(
+              teamStatsOfTeams[16].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 92,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[16].imageUrl,
-              height: 40,
+             
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[16].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 16;
+                teamlogo = teamsOfTheSeason[16].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 16;
-              teamlogo = teamsOfTheSeason[16].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[16].wins * 3) + teamStatsOfTeams[16].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            
+            Text(
+              ((teamStatsOfTeams[16].wins * 3) + teamStatsOfTeams[16].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -1212,48 +1116,44 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 27,
-          ),
-         Text(
-            teamStatsOfTeams[17].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:16, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            
+           Text(
+              teamStatsOfTeams[17].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 92,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[17].imageUrl,
-              height: 40,
+             
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[17].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 17;
+                teamlogo = teamsOfTheSeason[17].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 17;
-              teamlogo = teamsOfTheSeason[17].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[17].wins * 3) + teamStatsOfTeams[17].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            
+            Text(
+              ((teamStatsOfTeams[17].wins * 3) + teamStatsOfTeams[17].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -1277,48 +1177,44 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 27,
-          ),
-         Text(
-            teamStatsOfTeams[18].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:16, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            
+           Text(
+              teamStatsOfTeams[18].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 92,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[18].imageUrl,
-              height: 40,
+             
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[18].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 18;
+                teamlogo = teamsOfTheSeason[18].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 18;
-              teamlogo = teamsOfTheSeason[18].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[18].wins * 3) + teamStatsOfTeams[18].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            
+            Text(
+              ((teamStatsOfTeams[18].wins * 3) + teamStatsOfTeams[18].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -1342,48 +1238,44 @@ class TeamSelect extends StatelessWidget {
       
       width: 315.0,
       height: 50.0,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-                width: 27,
-          ),
-         Text(
-            teamStatsOfTeams[19].posTable.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+      child: Padding(
+        padding: const EdgeInsets.only(left:16, right: 25),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            
+           Text(
+              teamStatsOfTeams[19].posTable.toString(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-           SizedBox(
-                width: 92,
-          ),
-          RaisedButton(
-            child: Image.network(
-              teamsOfTheSeason[19].imageUrl,
-              height: 40,
+             
+            FlatButton(
+              child: Image.network(
+                teamsOfTheSeason[19].imageUrl,
+                height: 40,
+              ),
+              color: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: (){
+                Navigator.pushNamed(context, '/Baseapp');
+                team = 19;
+                teamlogo = teamsOfTheSeason[19].imageUrl;
+              },
             ),
-            color: Colors.transparent,
-            elevation: 0,
-            highlightElevation: 0,
-            onPressed: (){
-              Navigator.pushNamed(context, '/Baseapp');
-              team = 19;
-              teamlogo = teamsOfTheSeason[19].imageUrl;
-            },
-          ),
-          SizedBox(
-                width: 100,
-          ),
-          Text(
-            ((teamStatsOfTeams[19].wins * 3) + teamStatsOfTeams[19].draws).toString()  ,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.grey[900],
+            
+            Text(
+              ((teamStatsOfTeams[19].wins * 3) + teamStatsOfTeams[19].draws).toString()  ,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     
      
@@ -1411,7 +1303,7 @@ class Baseapp extends StatelessWidget {
      SizedBox(
             height: 40.0
           ),
-     RaisedButton(
+     FlatButton(
       onPressed: () {
         Navigator.pushNamed(context, '/TeamSelect');
 
@@ -1422,7 +1314,7 @@ class Baseapp extends StatelessWidget {
         height: 80,
       ),
       color: Colors.transparent,
-      elevation: 0,
+      shape: CircleBorder(),
       
     ),
     SizedBox(
@@ -1510,36 +1402,37 @@ SizedBox(
       width: 315.0,
       height: 60.0,
       
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-        
-          Text(
-            "Matches",
+      child: Padding(
+        padding: const EdgeInsets.only(left:8.0, right: 8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+          
+            Text(
+              "Matches",
+              
+              style: TextStyle(
+                color: Colors.grey[800],
+                fontSize: 30,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w300,
+              ),
+            ),
             
-            style: TextStyle(
-              color: Colors.grey[800],
-              fontSize: 30,
-              fontFamily: 'Comfortaa',
-              fontWeight: FontWeight.w300,
+            
+                Text(
+              (teamStatsOfTeams[team].matchesPlayed).toString(),
+              textAlign: TextAlign.right,
+              style: TextStyle(
+                color: Colors.grey[800],
+                fontSize: 30,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w300,
+              ),
             ),
-          ),
-          SizedBox(
-            width: 145,
-          ),
-          
-              Text(
-            (teamStatsOfTeams[team].matchesPlayed).toString(),
-            textAlign: TextAlign.right,
-            style: TextStyle(
-              color: Colors.grey[800],
-              fontSize: 30,
-              fontFamily: 'Comfortaa',
-              fontWeight: FontWeight.w300,
-            ),
-          ),
-          
-        ],
+            
+          ],
+        ),
       ),
     
      
@@ -1563,35 +1456,36 @@ SizedBox(
       
       width: 315.0,
       height: 60.0,
-      child: Row(
-         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-         
-          Text(
-            "Won",
-            textAlign: TextAlign.left,
-            style: TextStyle(
-              color: Colors.grey[800],
-              fontSize: 30,
-              fontFamily: 'Comfortaa',
-              fontWeight: FontWeight.w300,
+      child: Padding(
+        padding: const EdgeInsets.only(left:8.0, right: 8.0),
+        child: Row(
+           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+           
+            Text(
+              "Won",
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                color: Colors.grey[800],
+                fontSize: 30,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w300,
+              ),
             ),
-          ),
-          SizedBox(
-            width: 200,
-          ),
-              Text(
-            teamStatsOfTeams[team].wins.toString(),
-            textAlign: TextAlign.right,
-            style: TextStyle(
-              color: Colors.grey[800],
-              fontSize: 30,
-              fontFamily: 'Comfortaa',
-              fontWeight: FontWeight.w300,
+           
+                Text(
+              teamStatsOfTeams[team].wins.toString(),
+              textAlign: TextAlign.right,
+              style: TextStyle(
+                color: Colors.grey[800],
+                fontSize: 30,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w300,
+              ),
             ),
-          ),
-         
-        ],
+           
+          ],
+        ),
       ),
     
      
@@ -1615,36 +1509,36 @@ SizedBox(
       
       width: 315.0,
       height: 60.0,
-      child: Row(
-         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-         
-          Text(
-            "Lost",
-            textAlign: TextAlign.left,
-            style: TextStyle(
-              color: Colors.grey[800],
-              fontSize: 30,
-              fontFamily: 'Comfortaa',
-              fontWeight: FontWeight.w300,
+      child: Padding(
+        padding: const EdgeInsets.only(left:8.0, right: 8.0),
+        child: Row(
+           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+           
+            Text(
+              "Lost",
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                color: Colors.grey[800],
+                fontSize: 30,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w300,
+              ),
             ),
-          ),
-          SizedBox(
-           width: 215,
-    
-          ),
-              Text(
-            teamStatsOfTeams[team].losses.toString(),
-            textAlign: TextAlign.right,
-            style: TextStyle(
-              color: Colors.grey[800],
-              fontSize: 30,
-              fontFamily: 'Comfortaa',
-              fontWeight: FontWeight.w300,
+            
+                Text(
+              teamStatsOfTeams[team].losses.toString(),
+              textAlign: TextAlign.right,
+              style: TextStyle(
+                color: Colors.grey[800],
+                fontSize: 30,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w300,
+              ),
             ),
-          ),
-         
-        ],
+           
+          ],
+        ),
       ),
     
      
@@ -1668,36 +1562,36 @@ SizedBox(
       
       width: 315.0,
       height: 60.0,
-      child: Row(
-         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          
-          Text(
-            "Draws",
-            textAlign: TextAlign.left,
-            style: TextStyle(
-              color: Colors.grey[800],
-              fontSize: 30,
-              fontFamily: 'Comfortaa',
-              fontWeight: FontWeight.w300,
+      child: Padding(
+        padding: const EdgeInsets.only(left:8.0, right: 8.0),
+        child: Row(
+           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            
+            Text(
+              "Draws",
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                color: Colors.grey[800],
+                fontSize: 30,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w300,
+              ),
             ),
-          ),
-          SizedBox(
-           width: 190,
-    
-          ),
-              Text(
-            teamStatsOfTeams[team].draws.toString(),
-            textAlign: TextAlign.right,
-            style: TextStyle(
-              color: Colors.grey[800],
-              fontSize: 30,
-              fontFamily: 'Comfortaa',
-              fontWeight: FontWeight.w300,
+            
+                Text(
+              teamStatsOfTeams[team].draws.toString(),
+              textAlign: TextAlign.right,
+              style: TextStyle(
+                color: Colors.grey[800],
+                fontSize: 30,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w300,
+              ),
             ),
-          ),
-         
-        ],
+           
+          ],
+        ),
       ),
     
      
@@ -1721,36 +1615,36 @@ SizedBox(
       
       width: 315.0,
       height: 60.0,
-      child: Row(
-         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-         
-          Text(
-            "Scored",
-            textAlign: TextAlign.left,
-            style: TextStyle(
-              color: Colors.grey[800],
-              fontSize: 30,
-              fontFamily: 'Comfortaa',
-              fontWeight: FontWeight.w300,
+      child: Padding(
+        padding: const EdgeInsets.only(left:8.0, right: 8.0),
+        child: Row(
+           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+           
+            Text(
+              "Scored",
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                color: Colors.grey[800],
+                fontSize: 30,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w300,
+              ),
             ),
-          ),
-          SizedBox(
-           width: 144,
-    
-          ),
-              Text(
-            teamStatsOfTeams[team].scoredRatio.toStringAsFixed(2),
-            textAlign: TextAlign.right,
-            style: TextStyle(
-              color: Colors.grey[800],
-              fontSize: 30,
-              fontFamily: 'Comfortaa',
-              fontWeight: FontWeight.w300,
+            
+                Text(
+              teamStatsOfTeams[team].scoredRatio.toStringAsFixed(2),
+              textAlign: TextAlign.right,
+              style: TextStyle(
+                color: Colors.grey[800],
+                fontSize: 30,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w300,
+              ),
             ),
-          ),
-          
-        ],
+            
+          ],
+        ),
       ),
     
      
@@ -1775,36 +1669,36 @@ SizedBox(
       
       width: 315.0,
       height: 60.0,
-      child: Row(
-         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          
-          Text(
-            "Conceded",
-            textAlign: TextAlign.left,
-            style: TextStyle(
-              color: Colors.grey[800],
-              fontSize: 30,
-              fontFamily: 'Comfortaa',
-              fontWeight: FontWeight.w300,
+      child: Padding(
+        padding: const EdgeInsets.only(left:8.0, right: 8.0),
+        child: Row(
+           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            
+            Text(
+              "Conceded",
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                color: Colors.grey[800],
+                fontSize: 30,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w300,
+              ),
             ),
-          ),
-          SizedBox(
-           width: 104,
-    
-          ),
-              Text(
-             teamStatsOfTeams[team].concedRatio.toStringAsFixed(2),
-            textAlign: TextAlign.right,
-            style: TextStyle(
-              color: Colors.grey[800],
-              fontSize: 30,
-              fontFamily: 'Comfortaa',
-              fontWeight: FontWeight.w300,
+            
+                Text(
+               teamStatsOfTeams[team].concedRatio.toStringAsFixed(2),
+              textAlign: TextAlign.right,
+              style: TextStyle(
+                color: Colors.grey[800],
+                fontSize: 30,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w300,
+              ),
             ),
-          ),
-          
-        ],
+            
+          ],
+        ),
       ),
     
      
@@ -1853,18 +1747,14 @@ SizedBox(
     SizedBox(
       height: 10.0
     ),
-         Row(
+         Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          SizedBox(
-            width: 25,
-          ),
+          
           Image.network(
             teamStatsOfTeams[team].upcomingMatch.homeTeam.imageUrl,
             height: 60,
           ),
-          SizedBox(
-            width: 45,
-          ),
+          
          Text("- VS -",
          textAlign: TextAlign.center,
          style: TextStyle(
@@ -1872,9 +1762,7 @@ SizedBox(
            fontWeight: FontWeight.w200
 
          ),),
-         SizedBox(
-            width: 45,
-          ),
+         
            Image.network(
             teamStatsOfTeams[team].upcomingMatch.awayTeam.imageUrl,
             height: 60,
