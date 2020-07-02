@@ -9,6 +9,7 @@ An Android App to stay updated on your favorite team's score, upcoming matches a
 * Leaderboards and Team Select
   * Check team rankings
   * Check points in current Season
+  * Click to see team's detailed stats
 <br><img src="S.W.A.T/App/screenshots/SSLeaderboard.jpg" width=400>
 
 * Team Stats Page
